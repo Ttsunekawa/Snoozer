@@ -15,6 +15,9 @@ class SessionForm extends React.Component {
     this.passwordTyper = this.passwordTyper.bind(this);
   }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
