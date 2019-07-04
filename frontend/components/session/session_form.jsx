@@ -10,7 +10,11 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSubmit = this.demoSubmit.bind(this);
+    this.emailTyper = this.emailTyper.bind(this);
+    this.passwordTyper = this.passwordTyper.bind(this);
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -18,13 +22,69 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   };
 
+  demoSubmit() {
+    const user = { email: "jimmyg@49ers.com", password: "password123123"}
+    this.props.processForm(user);
+  }
+  
+  emailTyper() {
+    let i = 0;
+    let email = 'jimmyg@49ers.com'
+    const speed = 75; /* The speed/duration of the effect in milliseconds */
+    let email_field = document.getElementById("input-email")
+    email_field.value = ""
+
+    const typeWriter = () => {
+      if (i < email.length) {
+        email_field.value += email.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    };
+    
+    typeWriter();
+    setTimeout(this.passwordTyper, 1000);
+    setTimeout(this.demoSubmit, 3200);
+  };
+
+  passwordTyper() {
+    let i = 0;
+    const password = 'football123123'
+    const speed = 75; /* The speed/duration of the effect in milliseconds */
+    let password_field = document.getElementById("input-password")
+    password_field.value = ""
+
+    const typeWriter = () => {
+      if (i < password.length) {
+        password_field.value += password.charAt(i);
+        i++;
+        setTimeout(typeWriter2, speed);
+      }
+    };
+    typeWriter()
+  };
+
+  renderErrors() {
+    return (
+      <ul className="errors-container">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
+
   render() {
-    let signUpInput = ""
+    let signUpInput;
+    let demoUser;
 
     if(this.props.formType === 'Sign Up') {
       signUpInput = 
@@ -34,9 +94,16 @@ class SessionForm extends React.Component {
             <input id="input-username" type="text" className="box-text-input" placeholder="Enter new username" onChange={this.update('username')} value={this.state.username}/>
           </div>
         </div>
-    } else {
-
     }
+
+    if(this.props.formType === 'Login') {
+      demoUser = 
+      <div className="demouser-submit-button">
+        <button className="app-button-gradient" onClick={this.emailTyper}>Demo User</button>
+      </div>
+    }
+
+    
   
     return (
       <div className="session-background">
@@ -60,7 +127,7 @@ class SessionForm extends React.Component {
                 <a className="logo" href="/">
                   <img src="https://i.ibb.co/pP6Txk2/sleeper-logo.png" alt=""/>
                 </a>
-                <h1>snoozer</h1>
+                <a className="logo-header"href="/"><h1>snoozer</h1></a>
               </div>
             </header>
             <div className="auth-content-container">
@@ -72,12 +139,13 @@ class SessionForm extends React.Component {
                 <div className="onboard-desc-text">{this.props.onboardText}</div>
               </div>
               <div className="auth-form">
-                <form autoComplete="off" onSubmit={this.handleSubmit}>
+                {this.renderErrors()}
+                <form autoComplete="off">
                   {signUpInput}
                   <div className="box-text-input">
                     <label htmlFor="email">email</label>
                     <div className="input-container">
-                        <input autoComplete="off" id="email"type="text" className="box-text-input"  placeholder={this.props.emailPlace} onChange={this.update('email')} value={this.state.email} />
+                        <input autoComplete="off" id="input-email" type="text" className="box-text-input"  placeholder={this.props.emailPlace} onChange={this.update('email')} value={this.state.email} />
                     </div>
                   </div>
                   <div className="box-text-input">
@@ -86,9 +154,12 @@ class SessionForm extends React.Component {
                         <input id="input-password" type="password" className="box-text-input"  placeholder={this.props.passwordPlace} onChange={this.update('password')} value={this.state.password} />
                     </div>
                   </div>
-                  <div className="submit-button"> 
-                    <input type="submit" className="app-button-gradient" value={this.props.formType}/>
-                  </div>   
+                  <div className="button-container">
+                    <div className="submit-button"> 
+                      <input onClick={this.handleSubmit} type="submit" className="app-button-gradient" value={this.props.formType}/>
+                    </div>
+                    {demoUser}
+                  </div>
                 </form>
               </div>
             </div>

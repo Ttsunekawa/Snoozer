@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
-  errors: state.errors.session,
+  errors: state.errors.sessionErrors,
   formType: 'Sign Up',
   navLink: <Link className="right-header-action" to="/login">Login</Link>,
   onboardText: "Let's get started by creating an account",
