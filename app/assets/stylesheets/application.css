@@ -46,11 +46,28 @@ div {
   color: #000;
 }
 
+.logo-container {
+  display: flex;
+}
+
 .logo img {
-  width: 174px;
+  width: 80px;
   margin-left: 100px;
   margin-top: 50px;
 }
+
+.logo-container h1 {
+  margin-top: 50px;
+  text-align: left;
+  font-family: 'Muli';
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.52;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 
 .auth-board-layout {
     height: 100vh;
@@ -93,6 +110,8 @@ div {
     flex: 0 0 0;
     opacity: 0;
   }
+
+  .
 }
 
 .onboard-image-panel {

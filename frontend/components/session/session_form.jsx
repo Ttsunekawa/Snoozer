@@ -56,9 +56,12 @@ class SessionForm extends React.Component {
           </div>
           <div className="main-container">
             <header>
-              <a className="logo" href="/">
-                <img src="http://whitakergroup.net/wp-content/uploads/2015/11/SnoozerU.logo-Custom.png" alt=""/>
-              </a>
+              <div className="logo-container">
+                <a className="logo" href="/">
+                  <img src="https://i.ibb.co/pP6Txk2/sleeper-logo.png" alt=""/>
+                </a>
+                <h1>snoozer</h1>
+              </div>
             </header>
             <div className="auth-content-container">
               <div className="header-container">
