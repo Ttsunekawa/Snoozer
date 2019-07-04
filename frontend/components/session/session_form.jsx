@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
             <div className="onboard-image-panel">
               <div className="content-container">
                 <div>
-                  <video src="https://sleepercdn.com/videos/draftboard.mp4" data-vscid="oexb3kxio"></video>
+                  <video autoPlay="on" src="https://sleepercdn.com/videos/draftboard.mp4" data-vscid="oexb3kxio"></video>
                 </div>
               </div>
               <div className="title-continaer">
