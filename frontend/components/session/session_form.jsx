@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
       if (i < password.length) {
         password_field.value += password.charAt(i);
         i++;
-        setTimeout(typeWriter2, speed);
+        setTimeout(typeWriter, speed);
       }
     };
     typeWriter()
