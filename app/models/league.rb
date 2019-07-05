@@ -1,13 +1,14 @@
 class League < ApplicationRecord
+  validates :name, presence: true
 
 has_many :teams
-
 has_many :users,
   through: :teams,
-  source: :users
+  source: :user
 
-has_one :commissioner,
-  through: :teams,
-  source: :commissioner
+belongs_to :commissioner,
+foreign_key: :user_id
 
-r
+
+
+end

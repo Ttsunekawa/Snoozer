@@ -11,6 +11,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
+
   private
 
   def users_params
