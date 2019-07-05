@@ -2,7 +2,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #122638;
   color: #fbfbfb;
   flex-direction: column;
 }
@@ -16,14 +16,14 @@
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  background-color: black;
+  background-color: #122638;
   height: 170px;
 }
 
 .splash-auth {
   display: flex;
-  width: 45%;
-  justify-content: space-evenly;
+  width: 25%;
+  justify-content: space-around;
   align-items: center;
   height: 78%;
 }

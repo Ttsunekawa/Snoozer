@@ -4,6 +4,13 @@ class User < ApplicationRecord
   validates :email, :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :leagues,
+  through: :teams,
+  source: :team
+  
+  has_many :teams
+
+
 after_initialize :ensure_session_token
 
 attr_reader :password

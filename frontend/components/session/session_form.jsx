@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
   demoSubmit() {
     const user = { email: "jimmyg@49ers.com", password: "password123123"}
     this.props.processForm(user);
+    
   }
   
   emailTyper() {

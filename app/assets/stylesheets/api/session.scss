@@ -276,6 +276,7 @@ div {
 }
 
 .app-button-gradient {
+  // border: 1px;
   width: 110px;
   margin-top: 40px;
   margin-left: 10px;
@@ -306,4 +307,4 @@ div {
 
 .app-button-gradient:focus {outline: none}
 
-.app-button-gradient:hover { box-shadow: 0 4px 6px 0 rgba(0,0,0,0.1); }
+.app-button-gradient:hover { box-shadow: 0 6px 8px 0 rgba(0,0,0,0.1); }
