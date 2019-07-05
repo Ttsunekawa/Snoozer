@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
     
     typeWriter();
     setTimeout(this.passwordTyper, 1000);
-    setTimeout(this.demoSubmit, 3200);
+    setTimeout(this.demoSubmit, 2100);
   };
 
   passwordTyper() {
