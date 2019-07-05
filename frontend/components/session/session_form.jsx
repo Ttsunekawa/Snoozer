@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
+import Logo from '../../components/logo/logo';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -126,12 +128,7 @@ class SessionForm extends React.Component {
           </div>
           <div className="main-container">
             <header>
-              <div className="logo-container">
-                <a className="logo" href="/">
-                  <img src="https://i.ibb.co/pP6Txk2/sleeper-logo.png" alt=""/>
-                </a>
-                <a className="logo-header"href="/"><h1>snoozer</h1></a>
-              </div>
+              <Logo formType={this.props.formType}/>
             </header>
             <div className="auth-content-container">
               <div className="header-container">
