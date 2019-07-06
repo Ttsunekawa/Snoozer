@@ -1,0 +1,2 @@
+module Api::LeaguesHelper
+end

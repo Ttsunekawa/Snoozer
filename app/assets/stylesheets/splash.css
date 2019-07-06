@@ -45,6 +45,11 @@
     font-family: "Muli";   
 }
 
+.logout {
+  margin: 35px;
+  background-color: #122638;
+}
+
 .greeting-logo-header {
   text-decoration: none;
   color: #FBFBFB;

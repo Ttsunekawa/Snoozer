@@ -20,7 +20,7 @@ const Greeting = ({ currentUser, logout }) => {
     return (
     <div className="splash-auth-container">
       <h2>Welcome, {currentUser.username}</h2>
-      <button onClick={logout}>Log Out</button>
+      <button className="auth-button logout" onClick={logout}>Log Out</button>
     </div>
     )
   };

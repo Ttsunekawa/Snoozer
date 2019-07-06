@@ -1,12 +1,18 @@
-import { RECEIVE_CURRENT_USER }from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER }from '../actions/session_actions';
+import { RECEIVE_LEAGUE, DELETE_LEAGUE } from '../actions/league_actions';
 
 const usersReducer = (state = {}, action) => {
 
   let nextState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      nextState[action.currentUser.id] = action.currentUser;
-      return nextState
+      return {[action.payload.currentUser.id]: action.payload.currentUser}
+    case LOGOUT_CURRENT_USER:
+      return {}
+    case RECEIVE_LEAGUE:
+      return {[action.payload.currentUser.id]: action.payload.currentUser }
+    case DELETE_LEAGUE:
+
     default:
       return state;
   }

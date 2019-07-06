@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_185636) do
+ActiveRecord::Schema.define(version: 2019_07_05_210735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_07_05_185636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount_of_teams", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_leagues_on_user_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -53,8 +55,6 @@ ActiveRecord::Schema.define(version: 2019_07_05_185636) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_teams_on_league_id"
-    t.index ["user_id", "league_id"], name: "index_teams_on_user_id_and_league_id", unique: true
-    t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
