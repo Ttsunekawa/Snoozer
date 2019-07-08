@@ -39,3 +39,44 @@
   }
 }
 
+.custom-radio-item {
+  cursor: ponter;
+  display: flex;
+}
+.custom-radio-item > .custom-radio {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    -webkit-flex: 0 0 28px;
+    -ms-flex: 0 0 28px;
+    flex: 0 0 28px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-radio:focus {
+  outline:0;
+}
+
+.custom-radio-item > 
+.custom-radio
+.custom-radio-fill {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border-radius: 50%;
+  background: #2196f3;
+  position: relative;
+  transform: scale(0);
+  transition: all 0.1s ease;
+}
+
+.custom-radio-item > 
+.custom-radio.checked
+.custom-radio-fill {
+  transform: scale(1);
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import TeamSelect from './teams_select';
-import ScoringFormatRadio from './scoring_format';
+import ScoringFormatRadio from './scoring_format_radio';
 
 class LeaguesForm extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class LeaguesForm extends React.Component {
       amount_of_teams: "",
       image_url: "",
       user_id: this.props.currentUser.id,
+      leagueType: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,20 +18,24 @@ class LeaguesForm extends React.Component {
     // this.emailTyper = this.emailTyper.bind(this);
     // this.passwordTyper = this.passwordTyper.bind(this);
     this.handleTeamsChange = this.handleTeamsChange.bind(this);
+    this.handleLeagueType = this.handleLeagueType.bind(this);
   }
 
   componentWillMount() {
     this.props.clearErrors();
   }
 
-  handleTeamsChange(value) {
-    this.setState({ amount_of_teams: value })
+  componentDidUpdate() {
     console.log(this.state)
   }
 
-  // handleLeagueType(value) {
-  //   this.setState({ leagueType: value })
-  // }
+  handleTeamsChange(value) {
+    this.setState({ amount_of_teams: value })
+  }
+
+  handleLeagueType(value) {
+    this.setState({ leagueType: value })
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -71,7 +76,7 @@ class LeaguesForm extends React.Component {
                 </div> 
                 <div className="form-section">
                   <label className="scoring-radio-group">Scoring Format</label>
-                  <ScoringFormatRadio />
+                  <ScoringFormatRadio handleLeagueType={this.handleLeagueType} />
                 </div>
                 <div className="form-section">
 
