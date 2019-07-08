@@ -3,6 +3,7 @@ import { receiveErrors } from './session_actions';
 
 export const RECEIVE_LEAGUE = "RECEIVE_LEAGUE";
 export const DELETE_LEAGUE = "DELETE_LEAGUE";
+export const RECEIVE_LEAGUES = "RECEIVE_LEAGUES";
 
 export const receiveLeague = payload => ({
   type: RECEIVE_LEAGUE,
@@ -12,6 +13,11 @@ export const receiveLeague = payload => ({
 export const removeLeague = leagueId => ({
   type: DELETE_LEAGUE,
   leagueId
+})
+
+export const receiveLeagues = payload => ({
+  type: RECEIVE_LEAGUES,
+  payload
 })
 
 export const createLeague = league => dispatch => (
@@ -27,3 +33,11 @@ export const deleteLeague = id => dispatch => (
     dispatch(removeLeague(commissioner))
   ))
 )
+
+export const fetchLeagues = () => dispatch => (
+  LeagueAPIUtil.fetchLeagues().then(payload => (
+    dispatch(receiveLeagues(payload))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);

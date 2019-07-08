@@ -11,12 +11,13 @@ const mapStateToProps = (state, ownProps) => ({
   navLink: <Link className ="right-header-action" to="/signup">Don't have an account? Sign Up!</Link>,
   onboardText: "Sign in using email or username",
   emailPlace: "Enter email",
-  passwordPlace: "Enter password"
-})
+  passwordPlace: "Enter password",
+  state: state
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: user => dispatch(login(user)),
   clearErrors: () => dispatch(clearErrors())
-})
+});
 
 export default connect(mapStateToProps,mapDispatchToProps)(SessionForm);

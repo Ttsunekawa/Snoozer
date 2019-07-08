@@ -22,7 +22,7 @@
 
 .splash-auth {
   display: flex;
-  width: 25%;
+  width: 35%;
   justify-content: space-around;
   align-items: center;
   height: 78%;
@@ -42,7 +42,9 @@
     font-size: 16px;
     color: #00ceb8;
     margin: 10px;
-    font-family: "Muli";   
+    font-family: "Muli"; 
+    min-width: 25%;  
+    overflow: hidden;
 }
 
 .logout {

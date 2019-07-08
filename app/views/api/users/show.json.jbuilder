@@ -22,6 +22,8 @@ league_ids = []
       json.extract! league, :id, :name
       json.teams leagueTeams
       json.commissionerId league.commissioner.id
+      json.amount_of_teams leagueTeams.length
+      json.image_url league.image_url
     end
   end
 end

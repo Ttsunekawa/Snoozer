@@ -2,6 +2,11 @@ class Api::LeaguesController < ApplicationController
 
   before_action :require_logged_in
 
+  def index
+    @user = current_user
+    render "api/users/show"
+  end
+
   def create
     @league = League.new(league_params)
     @user = current_user

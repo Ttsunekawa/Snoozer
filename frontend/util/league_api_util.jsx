@@ -12,3 +12,10 @@ export const deleteLeague = id => (
     url: `/api/leagues/${id}`
   })
 );
+
+export const fetchLeagues = () => (
+  $.ajax({
+    method: "GET",
+    url: '/api/leagues/'
+  })
+)

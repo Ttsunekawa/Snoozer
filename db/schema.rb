@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_210735) do
+ActiveRecord::Schema.define(version: 2019_07_06_231128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_07_05_210735) do
     t.datetime "updated_at", null: false
     t.integer "amount_of_teams", null: false
     t.integer "user_id", null: false
+    t.string "image_url"
     t.index ["user_id"], name: "index_leagues_on_user_id"
   end
 
