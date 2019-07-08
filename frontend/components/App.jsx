@@ -3,9 +3,10 @@ import GreetingContainer from './greeting/greetings_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import LeaguesContainer from './leagues/leagues_container'
+import SplashContainer from './splash/splash_container';
+import LeftPanelContainer from './leagues/left_panel_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import SplashContainer from './splash/splash_container';
 
 
 const App = () => (
@@ -13,6 +14,9 @@ const App = () => (
     <header className="nav-container">
       <Route exact path='/' component={GreetingContainer} />
     </header>
+    <div className="left-panel-container">
+      <Route path="/leagues" component={LeftPanelContainer} />
+    </div>
 
     <Switch>
       <Route path="/leagues" component={LeaguesContainer} />

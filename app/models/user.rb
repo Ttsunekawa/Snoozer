@@ -10,6 +10,9 @@ class User < ApplicationRecord
   source: :league,
   dependent: :destroy
   
+  has_many :commissioned_leagues,
+  foreign_key: :user_id,
+  class_name: :League
 
   
 after_initialize :ensure_session_token

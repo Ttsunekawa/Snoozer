@@ -6,7 +6,7 @@ const _nullLeague = Object.freeze({
 });
 
 const leaguesReducer = (state = _nullLeague, action) => {
-
+  
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

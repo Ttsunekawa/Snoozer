@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { createLeague } from '../../actions/league_actions';
-import { clearErrors } from '../../actions/session_actions';
+import { createLeague } from '../../../actions/league_actions';
+import { clearErrors } from '../../../actions/session_actions';
 
 import LeaguesForm from './leagues_form';
 
