@@ -9,7 +9,3 @@
 User.delete_all
 Team.delete_all
 League.delete_all
-
-user1 = User.create ({username: "JimmyG", email: "jimmyg@49ers.com", password: "password123123"})
-
-league1 = League.create({ name: "Dynasty Drafters", amount_of_teams: 14, user_id: user1.id })
