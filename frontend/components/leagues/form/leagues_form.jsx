@@ -52,9 +52,9 @@ class LeaguesForm extends React.Component {
 
   renderErrors() {
     return (
-      <div className="isa_error">
+      <div className="errors-container">
         {this.props.errors.map((error, i) => (
-          <i className="fa fa-times-circle" key={`error-${i}`}>
+          <i key={`error-${i}`}>
             {error}
           </i>
         ))}

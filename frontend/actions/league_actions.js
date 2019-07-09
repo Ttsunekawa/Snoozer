@@ -4,6 +4,7 @@ export const RECEIVE_LEAGUE = "RECEIVE_LEAGUE";
 export const DELETE_LEAGUE = "DELETE_LEAGUE";
 export const RECEIVE_LEAGUES = "RECEIVE_LEAGUES";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS"
+export const RECEIVE_LEAGUE_ERRORS = "RECEIVE_LEAGUE_ERRORS"
 
 export const receiveLeague = payload => ({
   type: RECEIVE_LEAGUE,
