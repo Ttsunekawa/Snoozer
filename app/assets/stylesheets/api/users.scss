@@ -1,3 +1,39 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.isa_info, .isa_success, .isa_warning, .isa_error {
+  margin: 10px 0px;
+  padding:12px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.social-medias {
+  display: flex;
+  background: #373a44;
+  height: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.linkedin {
+  color: #ffff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.git {
+  color: #ffff;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.isa_error {
+  color: rgba(175, 14, 22, 0.445);
+  background-color: white;
+  width: 35%;
+}

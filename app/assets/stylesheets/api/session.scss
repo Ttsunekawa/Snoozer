@@ -9,26 +9,26 @@ div {
 
 
 .input {
-    text-rendering: auto;
-    color: initial;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    -webkit-appearance: textfield;
-    background-color: white;
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
-    font: 400 11px system-ui;
-    padding: 1px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: initial;
-    border-image: initial;
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 11px system-ui;
+  padding: 1px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: initial;
+  border-image: initial;
 }
 
 .session-background {
@@ -125,23 +125,23 @@ div {
 }
 
 .onboard-image-panel {
-    padding: 80px 40px 40px 40px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: auto;
-    width: 512px;
+  padding: 80px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  width: 512px;
 }
 
 .onboard-image-panel video {
-    max-width: 432px;
-    height: 347px;
-    margin-right: 22px;
+  max-width: 432px;
+  height: 347px;
+  margin-right: 22px;
 }
 
 .auth-board-layout
 .left-panel {
-      background-color: #122638;
+  background-color: #122638;
 }
 
 .onboard-image-panel
@@ -155,20 +155,20 @@ div {
 
 .onboard-image-panel
 .left-panel-description {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: -0.1px;
-    font-family: 'Muli';
-    color: #e6effa;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+  font-family: 'Muli';
+  color: #e6effa;
 }
 
 .main-container
 .auth-content-container {
-    padding: 90px 115px 115px 45px;
-    flex-grow: 1;
-    margin: auto;
-    width: 500px; 
+  padding: 90px 115px 115px 45px;
+  flex-grow: 1;
+  margin: auto;
+  width: 500px; 
 }
 
 .title-container {
@@ -176,8 +176,8 @@ div {
 }
 
 .header-container {
- padding: 0 10px;
- margin-bottom: 40px;
+  padding: 0 10px;
+  margin-bottom: 40px;
 }
 
 .onboard-header-text{
@@ -193,20 +193,20 @@ div {
 }
 
 .right-header-action {
-    font-size: 15px;
-    font-weight: bold;
-    color: #00ceb8;
-    cursor: pointer;
-    text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #00ceb8;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .onboard-desc-text {
-    font-family: 'Muli';
-    font-weight: 150;
-    font-size: 15px;
-    line-height: 24px;
-    letter-spacing: -0.1px;
-    color: #8190b0;
+  font-family: 'Muli';
+  font-weight: 150;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: #8190b0;
 }
 
 .header{
@@ -214,7 +214,7 @@ div {
 }
 
 .auth-form {
-    display: block;
+  display: block;
 }
 
 .box-text-input
@@ -228,12 +228,12 @@ div {
 }
 
 .box-text-input label {
-    font-size: 12px;
-    line-height: 18px;
-    color: #8190b0;
-    display: block;
-    transition: all 0.2s ease;
-    margin-bottom: 3px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #8190b0;
+  display: block;
+  transition: all 0.2s ease;
+  margin-bottom: 3px;
 }
 
 .box-text-input
