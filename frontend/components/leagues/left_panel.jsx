@@ -38,6 +38,8 @@ class LeftPanel extends React.Component {
         avatar={league.image_url}
         key={league.id}
         index={i+1}
+        leagueType={league.leagueType}
+        scoringType={league.scoringType}
         />
       ))
     };
