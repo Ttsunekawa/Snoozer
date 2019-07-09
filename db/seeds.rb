@@ -9,3 +9,5 @@
 User.delete_all
 Team.delete_all
 League.delete_all
+
+user1 = User.create ({username: "Jimmy Garoppolo", email: "jimmyg@49ers.com", password: "password123123"})
