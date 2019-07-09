@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
     this.passwordTyper = this.passwordTyper.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.clearErrors();
   }
 
@@ -29,8 +29,9 @@ class SessionForm extends React.Component {
   
 
   demoSubmit() {
-    const user = { email: "jimmyg@49ers.com", password: "password123123"}
-    this.props.processForm(user);
+    this.state = { email: "jimmyg@49ers.com", password: "password123123"};
+    let newUser = Object.assign({}, this.state)
+    this.props.processForm(newUser);
   }
   
   emailTyper() {

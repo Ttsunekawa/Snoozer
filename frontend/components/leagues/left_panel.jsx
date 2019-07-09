@@ -3,41 +3,86 @@ import Logo from '../logo/logo';
 import LeagueItem from './league_item';
 import { Link } from 'react-router-dom';
 
-const LeftPanel = (props, ownProps) => {
-  if(props.leagues[0] !== null){
-    const leagues = props.leagues;
-    const leagueItems = leagues.map(league => (
-      <LeagueItem 
-      name={league.name}
-      teams={league.amount_of_teams}
-      commissioner={league.commissioner}
-      avatar={league.image_url}
-      key={league.id}
-      />
-    ))
+class LeftPanel extends React.Component {
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      selectedIndex: null
+    }
 
-    return (
-    <div className="left-panel-header-container">
-      <Logo className="left-panel-logo" />
-      <div className="left-panel-header">
-        Welcome, {props.currentUser.username}
-      </div>
-      <div className="left-panel-body">
-        <Link to="leagues/create" className="league-create-container">
-          <img src="https://sleepercdn.com/images/v2/icons/create_league_trophy2.png"/>
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
+  }
+
+  toggleRadioBtn(index) {
+    this.setState({
+      selectedIndex: index,
+    });
+  }
+
+    render() {
+    let leagueItems;
+
+    if(this.props.leagues[0] !== null){
+      const leagues = this.props.leagues;
+      leagueItems = leagues.map((league, i) => (
+        <LeagueItem 
+        handler={this.toggleRadioBtn.bind(this)}
+        isChecked={(this.state.selectedIndex == i+1)}
+        name={league.name}
+        teams={league.amount_of_teams}
+        commissioner={league.commissioner}
+        avatar={league.image_url}
+        key={league.id}
+        index={i+1}
+        />
+      ))
+    };
+
+    let create;
+
+    if(this.props.location.pathname === "/leagues/create"){
+      create = 
+        <div className="league-create-container selected">
+          <img src="https://sleepercdn.com/images/v2/icons/create_league_trophy2.png" />
           <div>
             <div className="title">2019 Leagues are open!</div>
             <div className="description">Create 2019 League</div>
           </div>
-        </Link>
-        {leagueItems}
+        </div>
+    } else {
+      create = 
+          <Link to="leagues/create" className="league-create-container">
+            <img src="https://sleepercdn.com/images/v2/icons/create_league_trophy2.png" />
+            <div>
+              <div className="title">2019 Leagues are open!</div>
+              <div className="description">Create 2019 League</div>
+            </div>
+          </Link>
+    }
+
+    return (
+    <div className="left-panel-header-container">
+      <a href="/"className="left-panel-logo-container">
+        <div className="left-panel-logo" >
+          <img src="https://i.ibb.co/8x6GDxf/og-logo-66ee2f04c1dc70ba8cb5ec9f780990d1.png" alt="" />
+        </div>
+        <div className="left-panel-logo-header"><h1>snoozer</h1></div>
+      </a>
+      <div className="left-panel-header">
+        Welcome, {this.props.currentUser.username}
       </div>
+      <div className="leagues-label">LEAGUES</div>
+      <div className="left-panel-body">
+        {create}
+      </div>
+      {leagueItems}
     </div>
     );
-  } else {
-    return <div className="lds-hourglass"></div>
-  }
-};
+  };
+}
 
-export default LeftPanel
+export default LeftPanel;

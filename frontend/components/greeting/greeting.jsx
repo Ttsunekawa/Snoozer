@@ -11,7 +11,7 @@ const Greeting = ({ state, currentUser, logout }) => {
     <div className = "splash-auth-container">
       <Logo formType={formType} />
       <nav className="splash-auth">
-        <Link className="auth-button" to="/login">Log In</Link>
+        <Link className="auth-button" to="/login">LOG IN</Link>
         <br/>
         <Link className="auth-button" to="/signup">SIGN UP</Link>
       </nav>

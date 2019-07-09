@@ -5,8 +5,6 @@ class Splash extends React.Component {
     super(props)
   }
 
-  componentDidMount() { this.props.fetchLeagues() }
-
   render () {
     return(
       <div className="splash-main-container">

@@ -1,7 +1,5 @@
 class Api::LeaguesController < ApplicationController
 
-  before_action :require_logged_in
-
   def index
     @user = current_user
     render "api/users/show"
@@ -65,6 +63,6 @@ class Api::LeaguesController < ApplicationController
   private
 
   def league_params
-    params.require(:league).permit(:user_id, :name, :amount_of_teams)
+    params.require(:league).permit(:user_id, :name, :amount_of_teams, :image_url)
   end
 end

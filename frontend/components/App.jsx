@@ -14,9 +14,7 @@ const App = () => (
     <header className="nav-container">
       <Route exact path='/' component={GreetingContainer} />
     </header>
-    <div className="left-panel-container">
-      <Route path="/leagues" component={LeftPanelContainer} />
-    </div>
+   
 
     <Switch>
       <Route path="/leagues" component={LeaguesContainer} />

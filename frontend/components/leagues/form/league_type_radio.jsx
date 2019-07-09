@@ -7,11 +7,13 @@ class RadioBtn extends React.Component {
     super(props);
   }
 
+
   
+
   handleClick(e) {
     e.preventDefault();
     this.props.handler(this.props.index);
-    this.props.handleScoringType(e.target.value)
+    this.props.handleLeagueType(e.target.value)
   }
 
   render() {
@@ -24,7 +26,7 @@ class RadioBtn extends React.Component {
           <div className="meta">
             <div className="name">
               <div>{this.props.name}
-                <span className="subtext">{this.props.subtext}</span>
+                {/* <span className="subtext">{this.props.subtext}</span> */}
               </div>
             </div>
             <div className="description">{this.props.description}</div>
@@ -35,7 +37,7 @@ class RadioBtn extends React.Component {
   }
 }
 
-class ScoringFormatRadio extends React.Component {
+class LeagueTypeRadio extends React.Component {
 
   constructor(props) {
     super(props);
@@ -55,31 +57,31 @@ class ScoringFormatRadio extends React.Component {
   }
 
   render() {
-    const title = 
-    ["Standard Scoring", 
-    "Points Per Reception", 
-    "0.5 Points Per Reception"]
+    const title =
+      ["Redraft",
+        "Keeper",
+        "Dynasty"]
 
-    const description = 
-    ["Receptions are not worth extra points",
-    "Each reception is worth an extra point",
-    "Each reception is worth an extra 0.5 points"]
+    const description =
+      ["All rosters from this season are reset. Owners must participate in a draft where all players are available.",
+        "Each owner can designate players to keep on their roster for next season.The number of keepers is customizable via league settings.",
+        "All rosters stay with owners. Owners will need to conduct a draft from the new rookies and free agent pool."]
 
-    const subtext = ["STD", "PPR", "1/2 PPR"]
+    // const subtext = ["STD", "PPR", "1/2 PPR"]
 
     const { options } = this.state;
 
     const allOptions = options.map((option, i) => {
-      return <RadioBtn 
-      key={i} 
-      isChecked={(this.state.selectedIndex == i)} 
-      name={title[i]} 
-      description={description[i]} 
-      subtext={subtext[i]}
-      value={subtext[i]} 
-      index={i} 
-      handler={this.toggleRadioBtn.bind(this)} 
-      handleScoringType={this.props.handleScoringType}
+      return <RadioBtn
+        key={i}
+        isChecked={(this.state.selectedIndex == i)}
+        name={title[i]}
+        description={description[i]}
+        // subtext={subtext[i]}
+        value={title[i]}
+        index={i}
+        handler={this.toggleRadioBtn.bind(this)}
+        handleLeagueType={this.props.handleLeagueType}
       />
     });
 
@@ -90,4 +92,4 @@ class ScoringFormatRadio extends React.Component {
 }
 
 
-export default ScoringFormatRadio;
+export default LeagueTypeRadio;

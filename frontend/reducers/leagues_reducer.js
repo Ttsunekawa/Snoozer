@@ -18,9 +18,17 @@ const leaguesReducer = (state = _nullLeague, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullLeague;
     case RECEIVE_LEAGUE:
-      return action.payload.user_leagues;
+      if (action.payload.user_leagues) {
+        return action.payload.user_leagues;
+      } else {
+        return state;
+      }
     case RECEIVE_LEAGUES:
-      return action.payload.user_leagues;
+      if (action.payload.user_leagues) {
+        return action.payload.user_leagues;
+      } else {
+        return state;
+      }
     case DELETE_LEAGUE:
       delete newState[action.leagueId] 
       return newState
