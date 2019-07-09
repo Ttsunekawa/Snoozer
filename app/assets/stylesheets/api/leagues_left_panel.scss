@@ -187,6 +187,7 @@
   border-color: #fff transparent #fff transparent;
   animation: lds-hourglass 1.2s infinite;
 }
+
 @keyframes lds-hourglass {
   0% {
     transform: rotate(0);
@@ -205,6 +206,7 @@
   cursor: ponter;
   display: flex;
 }
+
 .custom-radio-item > .custom-radio {
     display: flex;
     width: 28px;

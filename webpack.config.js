@@ -20,7 +20,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '*'],
+    extensions: ['.js', '.jsx', '*', 'scss', 'css'],
   },
   devtool: 'inline-source-map'
 };
