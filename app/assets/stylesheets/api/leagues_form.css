@@ -198,8 +198,13 @@ div span{
   margin: 10px;
 }
 
+.form-elements-button h1{
+  cursor: pointer;
+}
+
 .form-elements-button:hover {
   background: #9be93b;
+  cursor:pointer;
 }
 
 .disclaimer {

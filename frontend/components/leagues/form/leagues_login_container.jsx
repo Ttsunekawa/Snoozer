@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
   user_id: state.entities.users[state.session.id].id,
   scoringType: null,
   leagueType: null,
-  formType: "create"
+  formType: "CREATE"
 });
 
 const mapDispatchToProps = dispatch => ({

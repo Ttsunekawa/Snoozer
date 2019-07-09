@@ -14,6 +14,10 @@
  *= require_self
  */
 
+.isa_info, .isa_success, .isa_warning, .isa_error {
+margin: 10px 0px;
+padding:12px;
+}
 
 .right-panel {
   display: flex;
@@ -38,4 +42,11 @@
   color: #ffff;
   font-weight: 600;
   font-size: 20px;
+}
+
+.isa_error {
+    color: rgba(175, 14, 22, 0.445);
+    background-color: white;
+    width: 35%;
+    font-family: "muli;"
 }

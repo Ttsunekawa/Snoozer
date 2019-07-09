@@ -63,6 +63,6 @@ class Api::LeaguesController < ApplicationController
   private
 
   def league_params
-    params.require(:league).permit(:user_id, :name, :amount_of_teams, :image_url)
+    params.require(:league).permit(:user_id, :name, :amount_of_teams, :image_url, :leagueType, :scoringType)
   end
 end

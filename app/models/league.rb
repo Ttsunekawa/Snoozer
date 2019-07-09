@@ -1,5 +1,5 @@
 class League < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :amount_of_teams, :user_id, :leagueType, :scoringType, presence: true
 
 has_many :teams, dependent: :destroy
 has_many :users,

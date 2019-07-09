@@ -52,13 +52,13 @@ class LeaguesForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul className="errors-container">
+      <div className="isa_error">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <i className="fa fa-times-circle" key={`error-${i}`}>
             {error}
-          </li>
+          </i>
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -69,16 +69,27 @@ class LeaguesForm extends React.Component {
   }
 
   render() {
+    let header;
+
+    if(this.props.formType === "CREATE") {
+      header = <div className="header">
+        <div className="header-title">Create a League for 2019</div>
+        <div className="header-text">Don't worry, you'll be able to make changes to all settings later</div>
+      </div>
+    } else {
+      header = <div className="header">
+        <div className="header-title">Edit your League</div>
+        <div className="header-text"></div>
+      </div>
+    }
 
     return (
       <div className="create-league-main-container">
         <div className="create-league-panel">
-          <div className="header">
-            <div className="header-title">Create a League for 2019</div>
-            <div className="header-text">Don't worry, you'll be able to make changes to all settings later</div>
-          </div>
+          {/* header goes here */} {header}
+          {this.renderErrors()}
           <div className="double-column">
-            <form className="left-column-form" onSubmit={this.handleSubmit}>
+            <form className="left-column-form">
                 <div className="form-section">
                   <label className="label">League Name</label>
                   <input onChange={this.update('name')} className="input-element" type="text" placeholder="Enter the name of your league" value={this.state.name}/>
@@ -101,7 +112,7 @@ class LeaguesForm extends React.Component {
                 </div>
                 <div className="form-section">
                   <div className="form-elements-button">
-                    <button>SUBMIT</button>
+                  <button onClick={this.handleSubmit}><h1>{this.props.formType}</h1></button>
                   </div>
                   <div className="disclaimer">Rosters and other scoring settings etc. can be set later</div>
                 </div>
