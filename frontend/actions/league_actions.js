@@ -35,13 +35,21 @@ export const createLeague = league => dispatch => (
 );
 
 export const deleteLeague = id => dispatch => (
-  LeagueAPIUtil.deleteLeague(id).then(commissioner => (
-    dispatch(removeLeague(commissioner))
+  LeagueAPIUtil.deleteLeague(id).then(leagueId => (
+    dispatch(removeLeague(leagueId))
   ))
 )
 
 export const fetchLeagues = () => dispatch => (
   LeagueAPIUtil.fetchLeagues().then(payload => (
+    dispatch(receiveLeagues(payload))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
+export const fetchInvite = url => dispatch => (
+  LeagueAPIUtil.fetchInvite(url).then(payload => (
     dispatch(receiveLeagues(payload))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))

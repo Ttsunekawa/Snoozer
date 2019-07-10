@@ -9,7 +9,14 @@ class Leagues extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchLeagues()
+    if(this.props.fetchInvite){
+      this.props.fetchInvite(this.props.match.params.id);
+      this.props.history.push('/leagues')
+    } else if (this.props.fetchLeagues) {
+      this.props.fetchLeagues();
+    } else {
+      <Redirect to="/"></Redirect>
+    }
   }
   
   render () {
@@ -20,7 +27,8 @@ class Leagues extends React.Component {
       </div>
     
       <div className="center-panel">
-        <Route path="/leagues/create" component={LeaguesLoginContainer} />
+        {/* <Route path="/leagues/:leagueId" componenet={LeagueShowContainer} /> */}
+        <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
       </div>
       <div className="right-panel">
         {/* Github/linkedin and stuff */}

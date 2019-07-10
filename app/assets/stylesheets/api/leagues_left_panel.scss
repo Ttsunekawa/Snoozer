@@ -91,6 +91,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  text-decoration: none;
 }
 
 .league-create-container.selected{
@@ -257,4 +258,8 @@
   z-index: 9998;
   display: flex;
   flex-direction: column;
+}
+
+.leagues-link{
+  text-decoration: none;
 }

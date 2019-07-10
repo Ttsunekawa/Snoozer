@@ -9,7 +9,7 @@ class LeaguesForm extends React.Component {
     this.state = {
       name: this.props.name,
       amount_of_teams: this.props.amount_of_teams,
-      image_url: this.props.image_url,
+      image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d",
       user_id: this.props.user_id,
       scoringType: this.props.scoringType,
       leagueType: this.props.leagueType
@@ -111,9 +111,9 @@ class LeaguesForm extends React.Component {
                   <input onChange={this.update('image_url')} className="input-element" placeholder="Example: https://www.myawesomepicture.com" type="text" value ={this.state.image_url}/>
                 </div>
                 <div className="form-section">
-                  <div className="form-elements-button">
-                  <button onClick={this.handleSubmit}><h1>{this.props.formType}</h1></button>
-                  </div>
+                  <a onClick={this.handleSubmit} className="form-elements-button">
+                    <button onClick={this.handleSubmit}><h1>{this.props.formType}</h1></button>
+                  </a>
                   <div className="disclaimer">Rosters and other scoring settings etc. can be set later</div>
                 </div>
             </form>

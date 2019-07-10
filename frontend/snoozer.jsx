@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.createLeague = createLeague;
+  window.deleteLeague - deleteLeague;
   // end testing
 
   const root = document.getElementById('root');

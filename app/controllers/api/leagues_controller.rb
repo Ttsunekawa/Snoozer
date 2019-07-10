@@ -10,12 +10,16 @@ class Api::LeaguesController < ApplicationController
     @user = current_user
     @league.user_id = params[:league][:user_id]
     if @league.save
-      commish_team = Team.new(
-        name: "Team 1",
-        league_id: @league.id,
-        user_id: @league.user_id
-        )
-      commish_team.save
+
+      invite_link = SecureRandom.urlsafe_base64
+      Invite.create({url: invite_link, league_id: @league.id })
+
+        commish_team = Team.new(
+          name: "Team 1",
+          league_id: @league.id,
+          user_id: @league.user_id
+          )
+        commish_team.save
 
       x = params[:league][:amount_of_teams]
       x = x.to_i

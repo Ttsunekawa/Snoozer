@@ -19,3 +19,10 @@ export const fetchLeagues = () => (
     url: '/api/leagues/'
   })
 )
+
+export const fetchInvite = url => (
+  $.ajax({
+    method: "GET",
+    url: `/api/invites/${url}`
+  })
+)

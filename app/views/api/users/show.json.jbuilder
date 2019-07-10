@@ -24,6 +24,9 @@ league_ids = []
       json.commissionerId league.commissioner.id
       json.amount_of_teams leagueTeams.length
       json.image_url league.image_url
+      json.leagueType league.leagueType
+      json.scoringType league.scoringType
+      json.invite_link league.invite
     end
   end
 end

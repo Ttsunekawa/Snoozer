@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../logo/logo';
 import LeagueItem from './league_item';
+import Create from './create_button';
 import { Link } from 'react-router-dom';
 
 class LeftPanel extends React.Component {
@@ -10,13 +11,12 @@ class LeftPanel extends React.Component {
     this.state = {
       selectedIndex: null
     }
-
   }
-
+  
   componentDidUpdate() {
     console.log(this.state);
   }
-
+  
   toggleRadioBtn(index) {
     this.setState({
       selectedIndex: index,
@@ -40,6 +40,7 @@ class LeftPanel extends React.Component {
         index={i+1}
         leagueType={league.leagueType}
         scoringType={league.scoringType}
+        id={league.id}
         />
       ))
     };
@@ -56,14 +57,7 @@ class LeftPanel extends React.Component {
           </div>
         </div>
     } else {
-      create = 
-          <Link to="leagues/create" className="league-create-container">
-            <img src="https://sleepercdn.com/images/v2/icons/create_league_trophy2.png" />
-            <div>
-              <div className="title">2019 Leagues are open!</div>
-              <div className="description">Create 2019 League</div>
-            </div>
-          </Link>
+      create = <Create handler={this.toggleRadioBtn.bind(this)} />
     }
 
     return (
