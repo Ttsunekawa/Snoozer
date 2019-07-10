@@ -16,9 +16,9 @@ class RadioBtn extends React.Component {
 
   render() {
     return (
-      <div className="custom-radio">
-        <div className="custom-radio-item" onClick={this.handleClick.bind(this)}>
-          <button className={this.props.isChecked ? "custom-radio checked" : "custom-radio"} value={this.props.value}>
+      <div>
+        <div className="custom-radio-item" >
+          <button onClick={this.handleClick.bind(this)} className={this.props.isChecked ? "custom-radio checked" : "custom-radio"} value={this.props.value}>
             <div className="custom-radio-fill"></div>
           </button>
           <div className="meta">

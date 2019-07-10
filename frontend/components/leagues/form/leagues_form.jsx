@@ -112,7 +112,7 @@ class LeaguesForm extends React.Component {
                 </div>
                 <div className="form-section">
                   <a onClick={this.handleSubmit} className="form-elements-button">
-                    <button onClick={this.handleSubmit}><h1>{this.props.formType}</h1></button>
+                    <button className="submit-button">{this.props.formType}</button>
                   </a>
                   <div className="disclaimer">Rosters and other scoring settings etc. can be set later</div>
                 </div>

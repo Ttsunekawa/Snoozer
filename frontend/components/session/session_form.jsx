@@ -37,8 +37,13 @@ class SessionForm extends React.Component {
 
   demoSubmit() {
     this.state = { email: "jimmyg@49ers.com", password: "password123123"};
-    let newUser = Object.assign({}, this.state)
-    this.props.processForm(newUser);
+    if (!this.props.nextPath) {
+      this.props.processForm(this.state)
+        .then(() => this.props.history.push('/leagues'))
+    } else {
+      this.props.processForm(this.state)
+        .then(() => this.props.history.push(this.props.nextPath))
+    }
   }
   
   emailTyper() {
@@ -63,7 +68,7 @@ class SessionForm extends React.Component {
 
   passwordTyper() {
     let i = 0;
-    const password = 'football123123'
+    const password = 'football'
     const speed = 75; /* The speed/duration of the effect in milliseconds */
     let password_field = document.getElementById("input-password")
     password_field.value = ""
@@ -113,7 +118,7 @@ class SessionForm extends React.Component {
     if(this.props.formType === 'Login') {
       demoUser = 
       <div className="demouser-submit-button">
-        <button className="app-button-gradient" onClick={this.emailTyper}>Demo User</button>
+        <div className="app-button-gradient" onClick={this.emailTyper}>Demo User</div>
       </div>
     }
 

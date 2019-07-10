@@ -10,10 +10,12 @@ class Leagues extends React.Component {
 
   componentWillMount() {
     if(this.props.fetchInvite){
+      this.props.history.push(this.props.match.url)
       this.props.fetchInvite(this.props.match.params.id);
       this.props.history.push('/leagues')
     } else if (this.props.fetchLeagues) {
       this.props.fetchLeagues();
+      <Redirect to="/leagues" />
     } else {
       <Redirect to="/"></Redirect>
     }
