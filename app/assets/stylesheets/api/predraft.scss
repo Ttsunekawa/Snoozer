@@ -1,0 +1,123 @@
+.predraft-panel {
+  display:flex;
+  flex-direction: column;
+}
+
+.predraft-panel-header {
+  background: #fbfbfb;
+  padding: 0px 20px 2px 20px;
+  border-bottom: 1px solid #eee;
+  height: 63px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.predraft-panel-header
+.name-container
+.name {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.predraft-panel-header
+.name-container
+.description {
+  color: #bbb;
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: 232px;
+}
+
+.invite-link-container {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.form-elements.button {
+  width: 75px;
+}
+
+.invite-description {
+  color: #777;
+  font-size: 14px;
+  line-height: 12px;
+  text-overflow: wrap;
+  margin-left: 15px;
+  margin-top: 10px;
+  max-width:75%;
+}
+
+.teams-label {
+  margin-top: 25px;
+  margin-left: 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b6b6b6;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 5px;
+  display: flex;
+  margin-right: 25px;
+}
+
+.teams-index-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+.team-details {
+  display: flex;
+  align-items: center;
+}
+
+.roster-list-num {
+  display: inline;
+  margin-right: 10px;
+  min-width: 20px;
+}
+
+.team-avatar {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  background-size: contain;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  position: relative;
+}
+
+.team-owner {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 3px;
+  margin-bottom: 1px;
+}
+
+
+
+

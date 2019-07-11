@@ -7,14 +7,14 @@ class Api::InvitesController < ApplicationController
    @user = current_user
 
     league.teams.each do |team|
-      unless team.user_id = nil
+      if team.user_id == nil
         team.user_id = current_user.id
         team.save
         break
       end
     end
 
-    render "/api/users/show"
+    render "/api/leagues/index"
   end
 
   private

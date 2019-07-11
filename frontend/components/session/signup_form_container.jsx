@@ -9,7 +9,7 @@ import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => {
   let nextPath;
-  if (ownProps.location.nextPath !== undefined) {
+  if (ownProps.location.nextPath && ownProps.location.nextPath.includes("/invites")) {
     nextPath = ownProps.location.nextPath
     dispatch(receiveInvite(nextPath))
   } else {

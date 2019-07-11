@@ -62,6 +62,8 @@
   text-align: center;
   font-weight: 400;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .left-panel-logo img {
@@ -270,4 +272,17 @@
 
 .leagues-link{
   text-decoration: none;
+}
+
+.left-panel-header-container
+.auth-button.logout.leagues-button{
+  background-color: #373a44;
+  flex: 0;
+  cursor: pointer;
+}
+
+.logout-container {
+  position: fixed;
+  bottom: 0px;
+  left: -15px;
 }

@@ -16,16 +16,12 @@ const App = () => {
     <header className="nav-container">
       <Route exact path='/' component={GreetingContainer} />
     </header>
-   
-
-    <Switch>
       <ProtectedRoute path="/invites/:id" component={InvitesContainer} />
       <ProtectedRoute path="/leagues" component={LeaguesContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <Route exact path="/" component={SplashContainer} />
-      <Redirect to="/" component={SplashContainer} />
-    </Switch>
+      {/* <Redirect to="/" component={SplashContainer} /> */}
   </div>
   )
 };

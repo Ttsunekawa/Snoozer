@@ -40,6 +40,7 @@ class LeftPanel extends React.Component {
         leagueType={league.leagueType}
         scoringType={league.scoringType}
         id={league.id}
+        user_teams={league.user_teams}
         />
       ))
     } else {
@@ -77,6 +78,9 @@ class LeftPanel extends React.Component {
         {create}
       </div>
       {leagueItems}
+      <div className="logout-container">
+        <button className="auth-button logout leagues-button" onClick={this.props.logout}>Log Out</button>
+      </div>
     </div>
     );
   };

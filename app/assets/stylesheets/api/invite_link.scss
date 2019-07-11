@@ -1,0 +1,55 @@
+.invite-link-container {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+}
+
+.invite-link {
+    flex-direction: row;
+    background: #ddd;
+    border-radius: 5px;
+    display: flex;
+    color: #666;
+    padding: 13px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 294px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.invite-link
+.invite-url{
+  display: block;
+  flex-grow: 1;
+  flex: 0 0 244px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy {
+  padding-left: 10px;
+  width: 10px;
+}
+
+.form-elements.button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  height: 25px;
+
+  font-size: 12px;
+  background: #93e133;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

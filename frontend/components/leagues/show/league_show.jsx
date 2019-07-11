@@ -11,10 +11,7 @@ class LeagueShow extends React.Component {
 
   render() {
     return (
-      <div className="show-header">
-        <Route path="/" component={LeagueNavContainer} />
-      </div>
-    
+    <div></div>
     )
   }
 

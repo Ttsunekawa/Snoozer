@@ -23,7 +23,7 @@ class LeagueNav extends React.Component {
     let url = [
       `/leagues/${league.id}/match`,
       `/leagues/${league.id}/team`,
-      `/leagues/${league.id}/league`,
+      `/leagues/${league.id}/standings`,
       `/leagues/${league.id}/settings`];
 
     LeagueNav = headers.map((header, i) => (
@@ -40,11 +40,9 @@ class LeagueNav extends React.Component {
     );
 
     return (
-      <div className="league-panel">
-          <div className="panel-tabs" >
-            <div className="tabs-container">
-            {LeagueNav}
-          </div>
+      <div className="panel-tabs" >
+        <div className="tabs-container">
+          {LeagueNav}
         </div>
       </div>
     )
