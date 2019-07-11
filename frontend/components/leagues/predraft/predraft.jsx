@@ -7,7 +7,7 @@ class Predraft extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "localhost:3000/#/invites/" + this.props.invite,
+      value: "https://snoozer-app.herokuapp.com/#/invites" + this.props.invite,
       copied: false,
       button: <span className="form-elements button">Link</span>
     };
