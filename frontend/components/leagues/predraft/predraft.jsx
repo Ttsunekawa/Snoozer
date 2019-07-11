@@ -46,7 +46,7 @@ class Predraft extends React.Component {
           <div className="invite-link-container">
             <div className="invite-link">
               <div className="invite-url">
-                localhost:3000/#/invites/${this.props.invite}
+                https://snoozer-app.herokuapp.com/#/${this.props.invite}
               </div>
               <div className="copy">
                   <i className="fa fa-clipboard">
