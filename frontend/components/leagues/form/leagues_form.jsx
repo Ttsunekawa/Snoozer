@@ -2,6 +2,7 @@ import React from 'react';
 import TeamSelect from './teams_select';
 import ScoringFormatRadio from './scoring_format_radio';
 import LeagueTypeRadio from './league_type_radio';
+import { Redirect } from 'react-router-dom';
 
 class LeaguesForm extends React.Component {
   constructor(props) {
@@ -48,6 +49,8 @@ class LeaguesForm extends React.Component {
     e.preventDefault();
     const league = Object.assign({}, this.state);
     this.props.submitAction(league);
+    this.props.history.push('/leagues')
+  
   };
 
   renderErrors() {

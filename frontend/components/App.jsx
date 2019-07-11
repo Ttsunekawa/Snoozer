@@ -9,7 +9,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 
-const App = () => (
+const App = () => {
+  
+  return(
   <div>
     <header className="nav-container">
       <Route exact path='/' component={GreetingContainer} />
@@ -25,6 +27,7 @@ const App = () => (
       <Redirect to="/" component={SplashContainer} />
     </Switch>
   </div>
-);
+  )
+};
 
 export default App;

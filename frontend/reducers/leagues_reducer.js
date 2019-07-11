@@ -6,29 +6,17 @@ const _nullLeague = Object.freeze({
 });
 
 const leaguesReducer = (state = _nullLeague, action) => {
-  
+  Object.freeze(state);
+
   let newState = Object.assign({}, state)
   switch (action.type) {
-    case RECEIVE_CURRENT_USER:
-      if(action.payload.user_leagues){
-        return action.payload.user_leagues;
-      } else {
-        return state;
-      }
     case LOGOUT_CURRENT_USER:
       return _nullLeague;
     case RECEIVE_LEAGUE:
-      if (action.payload.user_leagues) {
-        return action.payload.user_leagues;
-      } else {
-        return state;
-      }
+      newState[action.league.id] = action.league;
+      return newState;
     case RECEIVE_LEAGUES:
-      if (action.payload.user_leagues) {
-        return action.payload.user_leagues;
-      } else {
-        return state;
-      }
+      return action.leagues;
     case DELETE_LEAGUE:
       delete newState[action.leagueId] 
       return newState

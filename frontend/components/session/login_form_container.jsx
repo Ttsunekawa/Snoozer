@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   let nextPath;
   let link;
 
-  if(state.invite){
+  if(state.invite !== undefined){
     nextPath = state.invite
     link = <Link className="right-header-action" to={nextPath}>Don't have an account? Sign Up</Link>
   } else {
@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     errors: state.errors.sessionErrors,
     formType: 'Login',
-    navLink: <Link className="right-header-action" to="/signup">Don't have an account? Sign Up</Link>,
+    navLink: link,
     onboardText: "Sign in using email or username",
     emailPlace: "Enter email",
     passwordPlace: "Enter password",

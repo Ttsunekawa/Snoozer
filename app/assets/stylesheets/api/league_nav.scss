@@ -1,0 +1,103 @@
+.league-panel {
+  border-right: 1px solid #efefef;
+  background: #fbfbfb;
+  height: 100vh;
+  position: relative;
+}
+
+.panel-tabs {
+  display: block;
+}
+
+.show-nav-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #efefef;
+  flex: 0 0 62px;
+}
+
+@media screen and (max-width: 1115px) {
+  .auth-board-layout.show
+  .left-panel.show {
+    min-width: 0;
+    width: 0;
+    flex: 0 0 0;
+    opacity: 0;
+  }
+}
+
+.auth-board-layout.show {
+  background: #fbfbfb;
+}
+
+.show-panel-tabs-wrapper {
+  position: relative;
+}
+
+.nav-item {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.panel-tabs
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #efefef;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.show-nav-link{
+  text-decoration: none;
+  color: black;
+}
+
+.panel-tabs
+.tabs-container
+.nav-item {
+  flex-basis: 100%;
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid #efefef;
+  padding: 16px 46px;
+  cursor: pointer;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.tabs-container {
+  height: 64px;
+  width: 100%;
+}
+
+.panel-tabs
+.tabs-container
+.nav-item
+.nav-name {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Muli';
+}
+
+.panel-tabs
+.tabs-container
+.nav-item
+.nav-description {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.show-nav-link:hover {
+  background: white;
+}
+
+.panel-tabs
+.tabs-container
+.nav-item.checked {
+  border-bottom: 5px solid black;
+  transition: 0.3;
+}

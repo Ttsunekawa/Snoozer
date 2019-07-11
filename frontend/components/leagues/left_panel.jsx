@@ -25,8 +25,7 @@ class LeftPanel extends React.Component {
 
     render() {
     let leagueItems;
-
-    if(this.props.leagues[0] !== null){
+    if(this.props.leagues[0]){
       const leagues = this.props.leagues;
       leagueItems = leagues.map((league, i) => (
         <LeagueItem 
@@ -43,7 +42,9 @@ class LeftPanel extends React.Component {
         id={league.id}
         />
       ))
-    };
+    } else {
+      leagueItems = <div></div>
+    }
 
     let create;
 

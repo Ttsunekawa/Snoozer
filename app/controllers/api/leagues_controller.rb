@@ -1,8 +1,8 @@
 class Api::LeaguesController < ApplicationController
 
   def index
-    @user = current_user
-    render "api/users/show"
+    @leagues = current_user.leagues
+    render "api/leagues/index"
   end
 
   def create
@@ -34,7 +34,7 @@ class Api::LeaguesController < ApplicationController
         i += 1
         end
 
-      render "/api/users/show"
+      render "/api/leagues/show"
     else
       render json: @league.errors.full_messages, status: 422
     end
@@ -44,7 +44,7 @@ class Api::LeaguesController < ApplicationController
   def show
     @league = current_user.leagues.find(params[:id])
     @user = current_user
-    render "/api/users/show"
+    render "/api/leagues/show"
   end
 
   def update

@@ -7,9 +7,9 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_LEAGUE_ERRORS = "RECEIVE_LEAGUE_ERRORS";
 export const RECEIVE_INVITE = "RECEIVE_INVITE";
 
-export const receiveLeague = payload => ({
+export const receiveLeague = league => ({
   type: RECEIVE_LEAGUE,
-  payload
+  league
 })
 
 export const removeLeague = leagueId => ({
@@ -17,9 +17,9 @@ export const removeLeague = leagueId => ({
   leagueId
 })
 
-export const receiveLeagues = payload => ({
+export const receiveLeagues = leagues => ({
   type: RECEIVE_LEAGUES,
-  payload
+  leagues
 })
 
 export const receiveErrors = errors => ({
@@ -47,8 +47,8 @@ export const deleteLeague = id => dispatch => (
 )
 
 export const fetchLeagues = () => dispatch => (
-  LeagueAPIUtil.fetchLeagues().then(payload => (
-    dispatch(receiveLeagues(payload))
+  LeagueAPIUtil.fetchLeagues().then(leagues => (
+    dispatch(receiveLeagues(leagues))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))

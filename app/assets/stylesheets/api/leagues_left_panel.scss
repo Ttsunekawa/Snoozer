@@ -94,6 +94,10 @@
   text-decoration: none;
 }
 
+.league-create-container:hover {
+  background: #555966;
+}
+
 .league-create-container.selected{
   background: #60646e;
 }
@@ -123,6 +127,10 @@
   opacity: 1;
   transition: all 0.2s ease;
   position: relative;
+}
+
+.league-item:hover {
+  background: #555966;
 }
 
 .league-item.checked {

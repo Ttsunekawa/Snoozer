@@ -8,10 +8,6 @@ const usersReducer = (state = {}, action) => {
       return {[action.payload.currentUser.id]: action.payload.currentUser}
     case LOGOUT_CURRENT_USER:
       return {}
-    case RECEIVE_LEAGUE:
-      return {[action.payload.currentUser.id]: action.payload.currentUser }
-    case RECEIVE_LEAGUES:
-      return { [action.payload.currentUser.id]: action.payload.currentUser }
     case DELETE_LEAGUE:
 
     default:

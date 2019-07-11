@@ -159,7 +159,7 @@ class SessionForm extends React.Component {
                   <div className="box-text-input">
                     <label htmlFor="email">email</label>
                     <div className="input-container">
-                        <input autoComplete="off" id="input-email" type="text" className="box-text-input"  placeholder={this.props.emailPlace} onChange={this.update('email')} value={this.state.email} />
+                        <input autoComplete="off" id="input-email" type="email" className="box-text-input"  placeholder={this.props.emailPlace} onChange={this.update('email')} value={this.state.email} />
                     </div>
                   </div>
                   <div className="box-text-input">

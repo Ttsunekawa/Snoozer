@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   entities: entitiesReducer,
   session: sessionReducer,
   errors: errorsReducer,
-  invite: invitesReducer
+  invite: invitesReducer,
 });
 
 export default rootReducer;

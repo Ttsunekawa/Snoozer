@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { createLeague, deleteLeague, fetchLeagues } from '../../actions/league_actions';
+import { receiveLeagueTabs } from '../../actions/ui_actions';
 import Leagues from './leagues';
 
 const mapStateToProps = (state) => {
@@ -18,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   createLeague: league => dispatch(createLeague(league)),
   deleteLeague: id => dispatch(deleteLeague(id)),
-  fetchLeagues: () => dispatch(fetchLeagues())
+  fetchLeagues: () => dispatch(fetchLeagues()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Leagues);
