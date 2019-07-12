@@ -65,12 +65,10 @@ class Predraft extends React.Component {
           <div className="teams-label">
             <div>
               Teams
-            </div>
+              </div>
             <div>
-
             </div>
-
-            </div>
+          </div>
           <div className="teams-index-container">
             {teamItems}
           </div>
