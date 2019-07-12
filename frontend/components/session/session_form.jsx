@@ -26,10 +26,12 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     if (!this.props.nextPath) {
       this.props.processForm(user)
-        .then(() => this.props.history.push('/leagues'))
+        .then(() => this.props.history.push('/leagues'));
+        window.location.reload();
     } else {
       this.props.processForm(user)
-        .then(() => this.props.history.push(this.props.nextPath) )
+        .then(() => this.props.history.push(this.props.nextPath) );
+        window.location.reload();
     }
   }
 

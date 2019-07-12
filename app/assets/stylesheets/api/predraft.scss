@@ -36,12 +36,24 @@
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  max-width: 232px;
+  max-width: 300px;
 }
 
 .invite-link-container {
   margin-top: 20px;
   margin-left: 15px;
+  display: flex;
+  width: 100%;
+}
+
+.invite-link {
+  background: #ddd;
+  border-radius: 5px;
+  display: flex;
+  color: #666;
+  padding: 13px 15px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .form-elements.button {
@@ -57,6 +69,7 @@
   margin-top: 10px;
   max-width:75%;
 }
+
 
 .teams-label {
   margin-top: 25px;
