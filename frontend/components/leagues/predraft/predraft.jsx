@@ -76,28 +76,7 @@ class Predraft extends React.Component {
           <div>
             Teams
             </div>
-<<<<<<< HEAD
-            <CopyToClipboard text={this.state.value}
-              onCopy={() => this.setState({ copied: true, button: <div></div> })}>
-              {this.state.button}
-            </CopyToClipboard>
-            {this.state.copied ? <span className="form-elements button small">Copied</span> : null}
-          </div>
-          <div className="invite-description">
-            Give this link to your friends and they'll be able to instantly join your league on web or mobile.
-          </div>
-          <div className="teams-label">
-            <div>
-              Teams
-              </div>
-            <div>
-            </div>
-          </div>
-          <div className="teams-index-container">
-            {teamItems}
-=======
           <div>
->>>>>>> development
           </div>
         </div>
         <div className="teams-index-container">
