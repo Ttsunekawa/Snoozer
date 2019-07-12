@@ -7,7 +7,7 @@ class Predraft extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "https://snoozer-app.herokuapp.com/#/invites/" + this.props.invite,
+      value: "localhost:3000/#/invites/" + this.props.invite,
       copied: false,
       button: <span className="form-elements button">Link</span>
     };
@@ -16,9 +16,37 @@ class Predraft extends React.Component {
 
   render() {
       let teamItems;
-      
+      let invite;
       if (this.props.teams[0]) {
-        if (Object.keys(this.props.owners).length === this.props.teams.length) { this.props.history.push("/leagues")}
+        if (Object.keys(this.props.owners).length === this.props.teams.length && this.props.location.pathname.includes("predraft") === true) { this.props.history.push("/leagues")}
+          if(this.props.location.pathname.includes("predraft" === false)) {
+            invite = 
+            <div>
+              <div className="invite-link-container">
+                <div className="invite-link">
+                  <div className="invite-url">
+                    https://snoozer-app.herokuapp.com/#/invites/${this.props.invite}
+                  </div>
+                  <div className="copy">
+                    <i className="fa fa-clipboard"></i>
+                  </div>
+                </div>
+              </div>
+              <CopyToClipboard text={this.state.value}
+                onCopy={() => this.setState({ copied: true, button: <div></div> })}>
+                {this.state.button}
+              </CopyToClipboard>
+              {this.state.copied ? <span className="form-elements button small">Copied</span> : null}
+              <div className="invite-description">
+                Give this link to your friends and they'll be able to instantly join your league on web or mobile.
+              </div>
+            </div>
+          } else {
+            invite = null;
+          }
+
+
+
         const teams = this.props.teams;
         teamItems = teams.map((team, i) => (
           <TeamItem
@@ -43,37 +71,16 @@ class Predraft extends React.Component {
           </div>
           <div className="league-avatar"><img src={this.props.image_url}/></div>
         </div>
-          <div className="invite-link-container">
-            <div className="invite-link">
-              <div className="invite-url">
-                https://snoozer-app.herokuapp.com/#/${this.props.invite}
-              </div>
-              <div className="copy">
-                  <i className="fa fa-clipboard">
-                  </i>
-              </div>
-            </div>
-            <CopyToClipboard text={this.state.value}
-              onCopy={() => this.setState({ copied: true, button: <div></div> })}>
-              {this.state.button}
-            </CopyToClipboard>
-            {this.state.copied ? <span className="form-elements button small">Copied</span> : null}
-          </div>
-          <div className="invite-description">
-            Give this link to your friends and they'll be able to instantly join your league on web or mobile.
-          </div>
+          {invite}
           <div className="teams-label">
             <div>
               Teams
             </div>
-            <div>
-
-            </div>
-
-            </div>
+            <div></div>
           <div className="teams-index-container">
             {teamItems}
           </div>
+        </div>
       </div>
     );
   }

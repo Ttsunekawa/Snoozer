@@ -29,9 +29,6 @@ class LeaguesForm extends React.Component {
     this.props.clearErrors();
   }
 
-  componentDidUpdate() {
-    console.log(this.state)
-  }
 
   handleTeamsChange(value) {
     this.setState({ amount_of_teams: value })
