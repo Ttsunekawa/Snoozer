@@ -33,7 +33,6 @@ class Standings extends React.Component {
           <MatchUpItem team1={teams[n]} team2={teams[n+1]} />
           );
         };
-
     } else {
       teamMatchUps = <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     };

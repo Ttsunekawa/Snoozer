@@ -44,10 +44,10 @@ class Leagues extends React.Component {
               {nav}
             <Switch>
               <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
+              {/* <Route path="/leagues/:leagueId/standings" component={StandingsContainer} /> */}
               <Route exact path="/leagues/:leagueId/predraft" component={PredraftContainer} />
-              <Route path="/leagues/:leagueId/standings" component={StandingsContainer} />
               {/* <Route exact path="/leagues/:leagueId/" component={StandingsContainer} /> */}
-              <Route path="/leagues/:leagueId" component={PredraftContainer} />
+              <Route exact path="/leagues/:leagueId" component={PredraftContainer} />
             </Switch>
           </div>
           <div className="auth-board-layout show">

@@ -66,7 +66,7 @@ class Predraft extends React.Component {
       <div className="predraft-panel">
         <div className="predraft-panel-header">
           <div className="name-container">
-            <div className="name">Pre-Draft</div>
+            <div className="name">{this.props.name}</div>
             <div className="description">{this.props.teams.length}-Team {this.props.scoringType}</div>
           </div>
           <div className="league-avatar"><img src={this.props.image_url}/></div>
@@ -80,7 +80,7 @@ class Predraft extends React.Component {
           </div>
         </div>
         <div className="teams-index-container">
-        {/* {teamItems} */}
+        {teamItems}
         </div>
       </div>
     );
