@@ -27,11 +27,9 @@ class SessionForm extends React.Component {
     if (!this.props.nextPath) {
       this.props.processForm(user)
         .then(() => this.props.history.push('/leagues'));
-        window.location.reload();
     } else {
       this.props.processForm(user)
         .then(() => this.props.history.push(this.props.nextPath) );
-        window.location.reload();
     }
   }
 
