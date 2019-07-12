@@ -13,9 +13,6 @@ class LeftPanel extends React.Component {
     }
   }
   
-  componentDidUpdate() {
-    console.log(this.state);
-  }
   
   toggleRadioBtn(index) {
     this.setState({

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import LeagueNav from './league_show'
+import LeagueNav from './league_nav';
 
 const mapStateToProps = (state, ownProps) => {
   let league = state.entities.leagues[ownProps.match.params.leagueId]
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     invite: league.invite_link.url,
     leagueType: league.leagueType,
     scoringType: league.scoringType,
-    // teams: league.teams
+    teams: league.teams
   })
 };
 

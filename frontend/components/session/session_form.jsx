@@ -26,17 +26,19 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     if (!this.props.nextPath) {
       this.props.processForm(user)
-        .then(() => this.props.history.push('/leagues'))
+        .then(() => this.props.history.push('/leagues'));
+        window.location.reload();
     } else {
       this.props.processForm(user)
-        .then(() => this.props.history.push(this.props.nextPath) )
+        .then(() => this.props.history.push(this.props.nextPath) );
+        window.location.reload();
     }
   }
 
   
 
   demoSubmit() {
-    this.state = { email: "jimmyg@49ers.com", password: "password123123"};
+    this.state = { email: "tylertsunekawa@gmail.com", password: "password123123"};
     if (!this.props.nextPath) {
       this.props.processForm(this.state)
         .then(() => this.props.history.push('/leagues'))
@@ -48,7 +50,7 @@ class SessionForm extends React.Component {
   
   emailTyper() {
     let i = 0;
-    let email = 'jimmyg@49ers.com'
+    let email = 'tylertsunekawa@gmail.com'
     const speed = 75; /* The speed/duration of the effect in milliseconds */
     let email_field = document.getElementById("input-email")
     email_field.value = ""
@@ -68,7 +70,7 @@ class SessionForm extends React.Component {
 
   passwordTyper() {
     let i = 0;
-    const password = 'football'
+    const password = 'password123123'
     const speed = 75; /* The speed/duration of the effect in milliseconds */
     let password_field = document.getElementById("input-password")
     password_field.value = ""
