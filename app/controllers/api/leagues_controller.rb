@@ -21,8 +21,7 @@ class Api::LeaguesController < ApplicationController
           )
         commish_team.save
 
-      x = params[:league][:amount_of_teams]
-      x = x.to_i
+      x = params[:league][:amount_of_teams].to_i
       x -= 1
       i = 2
 
