@@ -24,14 +24,14 @@ ActiveRecord::Base.transaction do
     scoringType: "PPR"})
 
   team = Team.create({
-    name: "Invariant Violation",
+    name: "San Francisco 49ers",
     league_id: league.id,
     user_id: user.id,
     image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
   })
 
   team = Team.create({
-    name: "somanyppltohalp",
+    name: "Los Angeles Chargers",
     league_id: league.id,
     user_id: user2.id,
     image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
@@ -47,10 +47,11 @@ ActiveRecord::Base.transaction do
   names = ["Walker", "Mike", "Julian", "Selam", "Kenny", "Michelle", "SeHwan", "Onur", "Dylan", "Ryan"]
   emails = ["walker@tubular.com", "mike@nutube.com", "julian@julian.com", "kenny@airbnb.com", "michelle@intents.com", "sehwan@sparkube.com", "onur@onur.com", "dylan@dylan.com", "ryan@help.com" ]
   errors = ["TypeError", "Error", "RangeError", "Error404", "SYNTAXERROR", "URIError", "Teacup error", "Standard Error", "Arugment Error", "somanyerrorsandIhavetohelp"]
+  nfl_teams = ["Cleveland Browns", "New England Patriots", "Oakland Raiders", "Los Angeles Rams", "Miami Dolphins", "Cincinnati Bengals", "Kansas City Chiefs", "Dallas Cowboys", "Houston Texans"]
 
   (0..9).each do |i|
     if i == 9
-      Team.create({name: "Empty Team, Ohhh nooooo we need one more person!",
+      Team.create({name: "Empty Team",
       league_id: league.id,
       image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
     })
@@ -63,7 +64,7 @@ ActiveRecord::Base.transaction do
       password: "password" })
 
     team = Team.create ({
-      name: errors[i],
+      name: nfl_teams[i],
       league_id: league.id,
       user_id: user.id,
       image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
