@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     invite: league.invite_link.url,
     leagueType: league.leagueType,
     scoringType: league.scoringType,
+    owners: league.owners,
     teams: league.teams
   })
 };

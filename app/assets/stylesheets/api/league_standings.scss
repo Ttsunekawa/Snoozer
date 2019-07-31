@@ -1,0 +1,88 @@
+.league-standings-panel {
+  width: 90%;
+  padding: 15px;
+  height: 100vh;
+}
+
+.league-standings-panel
+.league-standings {
+  margin-top: 30px;
+}
+
+.league-matchups-label {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #efefefef;
+  display: flex;
+}
+
+.team-owner-matchup-row {
+  display: flex;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  align-content: space-around;
+}
+
+.team-owner
+.meta >
+.name {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+  text-transform: none;
+}
+
+.team-owner
+.meta >
+.description {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 3px;
+  margin-bottom: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.win-chance-bar
+.left {
+  font-size: 8px;
+  line-height: 11px;
+  text-align: center;
+  color: #fff;
+  background: #00c853;
+  display: inline-block;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  overflow: hidden;
+  height: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-chance-bar
+.right {
+  font-size: 8px;
+  line-height: 11px;
+  text-align: center;
+  color: #fff;
+  background: #2196f3;
+  display: inline-block;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  overflow: hidden;
+  height: 7px;
+  align-items: center;
+  justify-content: center;
+}

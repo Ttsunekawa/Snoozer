@@ -51,7 +51,7 @@ ActiveRecord::Base.transaction do
 
   (0..9).each do |i|
     if i == 9
-      Team.create({name: "Empty Team",
+      Team.create({name: "Team 12",
       league_id: league.id,
       image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
     })

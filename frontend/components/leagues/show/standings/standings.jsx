@@ -9,9 +9,8 @@ class Standings extends React.Component {
   }
 
   render() {
-    
+    let teamItems = [];
     if (this.props.teams[0]) {
-      let teamItems = [];
       let users_team;
       const teams = this.props.teams;
       let last_team;
@@ -20,17 +19,32 @@ class Standings extends React.Component {
         if(parseInt(teams[i].user_id) === this.props.currentUser.id){
           
           users_team = teams.splice(i, 1);
-          last_team = teams.splice(teams.length-1, 1)
+          last_team = teams.splice(teams.length-1, 1);
+          let users_id = users_team[0].user_id;
+          let last_id = last_team[0].user_id;
 
           teamItems.push(
-            <MatchUpItem team1={users_team[0]} team2={last_team[0]} />
+            <MatchUpItem 
+              key={users_team[0].user_id} 
+              owner1={this.props.owners[users_id]} 
+              team1={users_team[0]} 
+              owner2={this.props.owners[last_id]}
+              team2={last_team[0]} />
           )
         };
       };
 
       for (let n = 0; n < teams.length; n+=2) {
+        let user1Id = teams[n].user_id;
+        let user2Id = teams[n+1].user_id;
         teamItems.push(
-          <MatchUpItem team1={teams[n]} team2={teams[n+1]} />
+          <MatchUpItem 
+            key={teams[n].user_id} 
+            team1={teams[n]}
+            owner1={this.props.owners[user1Id]}
+            team2={teams[n+1]}
+            owner2={this.props.owners[user2Id]}
+             />
           );
         };
     } else {
@@ -44,9 +58,9 @@ class Standings extends React.Component {
             <div>
               League matchups
             </div>
-            <div className="teams-index-container">
-              {/* {teamItems} */}
-            </div>
+          </div>
+          <div className="teams-index-container">
+            {teamItems}
           </div>
         </div>
       </div>
