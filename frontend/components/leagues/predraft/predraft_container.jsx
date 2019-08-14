@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
     leagueType: league.leagueType,
     scoringType: league.scoringType,
     id: league.id,
-    owners: league.owners
+    owners: league.owners,
+    currentUser: state.entities.users[state.session.id]
   })
 };
 

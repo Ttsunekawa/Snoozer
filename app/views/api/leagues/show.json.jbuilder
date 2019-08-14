@@ -9,6 +9,7 @@ teamOwners = {}
     teamOwners[team.user_id] = team.user
   end
 end
+debugger
 
 commissioner = "commissioner"
 

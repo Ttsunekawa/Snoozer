@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Standings from './standings';
+import LeagueStandings from './standings';
 
 const mapStateToProps = (state, ownProps) => {
   let league = state.entities.leagues[ownProps.match.params.leagueId]
