@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
-import Predraft from './predraft';
+import LeagueStandings from './standings';
 
 const mapStateToProps = (state, ownProps) => {
   let league = state.entities.leagues[ownProps.match.params.leagueId]
   return ({
-    invite: league.invite_link.url,
-    teams: league.teams,
-    name: league.name,
+    currentUser: state.entities.users[state.session.id],
+    league: league,
+    leagueName: league.name,
     image_url: league.image_url,
+    invite: league.invite_link.url,
     leagueType: league.leagueType,
     scoringType: league.scoringType,
-    id: league.id,
     owners: league.owners,
-    currentUser: state.entities.users[state.session.id]
+    teams: league.teams
   })
 };
 
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, null)(Predraft);;
+export default connect(mapStateToProps, null)(Standings);

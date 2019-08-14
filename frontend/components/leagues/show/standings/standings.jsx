@@ -57,13 +57,18 @@ class Standings extends React.Component {
     return (
       <div>
         <div className="league-standings-panel">
-          <div className="league-matchups-label">
-            <div>
-              League matchups
+          <div className="section">
+            <div className="league-matchups-label">
+              <div>
+                League matchups
+              </div>
+            </div>
+            <div className="teams-index-container">
+              {teamItems}
             </div>
           </div>
-          <div className="teams-index-container">
-            {teamItems}
+          <div className="section">
+            <LeagueStandings />
           </div>
         </div>
       </div>

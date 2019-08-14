@@ -47,6 +47,7 @@ class Predraft extends React.Component {
           }
 
         const teams = this.props.teams;
+        debugger
         teamItems = teams.map((team, i) => {
           return(
           <TeamItem
