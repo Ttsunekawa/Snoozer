@@ -39,7 +39,7 @@ class MatchUpItem extends React.Component {
               <div className="team-owner-matchup-roster">
                 <div className="team-owner">
                   <div className="avatar-container">
-                    <img src={this.props.owner1.image_url}></img>
+                    <img src={this.props.team1.image_url}></img>
                   </div>
                   <div className="meta">
                     <div className="name">{this.props.owner1}</div>
@@ -60,12 +60,12 @@ class MatchUpItem extends React.Component {
             <div className="user reverse">
               <div className="team-owner-matchup-roster">
                 <div className="team-owner">
-                  <div className="avatar-container">
-                    <img src={this.props.owner2.image_url}></img>
-                  </div>
                   <div className="meta">
                     <div className="name">{this.props.owner2}</div>
                     <div className="description">{this.props.team2.name}</div>
+                  </div>
+                  <div className="avatar-container">
+                    <img src={this.props.team2.image_url}></img>
                   </div>
                 </div>
               </div>
@@ -73,9 +73,12 @@ class MatchUpItem extends React.Component {
           </div>
           <div className="win-chance-bar">
             <div className="percentage-wrap">
-              <div className="left" style={team1Style}></div>
-              <div className="right" style={team2Style}></div>
+              <div className="percentage">{Math.floor(team1Percent)} % </div>
+              <div className="percentage-middle">Win %</div>
+              <div className="percentage">{Math.floor(team2Percent)} % </div>
             </div>
+            <div className="left" style={team1Style}></div>
+            <div className="right" style={team2Style}></div>
           </div>
         </div>
       </div>

@@ -51,6 +51,8 @@ class Standings extends React.Component {
       teamMatchUps = <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     };
 
+    debugger;
+
     return (
       <div>
         <div className="league-standings-panel">
