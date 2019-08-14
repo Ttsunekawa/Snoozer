@@ -21,7 +21,14 @@ class TeamSelect extends React.Component {
   render () {
   return (
     <div className="teams-select">
-      <button onClick={this.handleClick} name="6" value="6" className={(this.state.selectedValue == 6) ? "teams-select-item checked" : "teams-select-item" }>
+      <button 
+      onClick={this.handleClick} 
+      name="6" 
+      value="6" 
+      className={(this.state.selectedValue == 6) ? 
+      "teams-select-item checked" : 
+      "teams-select-item" 
+      }>
         <div className="teams-select-name-box">
           <div className="name">6</div>
           <div className="description">Teams</div>

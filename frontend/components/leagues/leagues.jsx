@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import LeftPanelContainer from './left_panel_container';
 import LeaguesLoginContainer from './form/leagues_login_container';
-import LeagueShowContainer from './show/league_show_container';
-import SplashContainer from '../splash/splash_container';
 import PredraftContainer from './predraft/predraft_container';
+import StandingsContainer from './show/standings/standings_container';
+import LeagueNavContainer from './show/league_nav_container';
 import { ProtectedRoute } from '../../util/route_util'
 
 class Leagues extends React.Component {
@@ -26,10 +26,14 @@ class Leagues extends React.Component {
   };
 
   render () {
-    let show;
+    let nav;
+
+    if(this.props.location.pathname === "/leagues/create" || this.props.location.pathname.includes("predraft")) {
+      nav = null
+    } else { nav = <Route path="/leagues/:leagueId/" component={LeagueNavContainer} />  }
+
 
     if(this.props.leagues !== undefined && this.props.leagues[0] !== null) {
-      // show = <Route path="/leagues/:leagueId" component={LeagueShowContainer} />
       return (
         <div className="main-leagues-container">
           <div className="left-panel-container">
@@ -37,10 +41,13 @@ class Leagues extends React.Component {
           </div>
 
           <div className="center-panel">
+              {nav}
             <Switch>
               <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
+              <Route path="/leagues/:leagueId/standings" component={StandingsContainer} />
               <Route exact path="/leagues/:leagueId/predraft" component={PredraftContainer} />
-              <Route path="/leagues/:leagueId" component={LeagueShowContainer} />
+              {/* <Route exact path="/leagues/:leagueId/" component={StandingsContainer} /> */}
+              <Route exact path="/leagues/:leagueId" component={PredraftContainer} />
             </Switch>
           </div>
           <div className="auth-board-layout show">

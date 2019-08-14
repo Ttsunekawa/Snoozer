@@ -1,0 +1,160 @@
+.league-standings-panel {
+  width: 90%;
+  padding: 15px;
+  height: 100vh;
+}
+
+.league-standings-panel
+.league-standings {
+  margin-top: 30px;
+}
+
+.user {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    align-items: center;
+}
+
+.league-matchups-label {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #efefefef;
+  display: flex;
+}
+
+.team-owner-matchup-row {
+  display: flex;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  align-content: space-around;
+}
+
+.team-owner {
+  display: flex;
+  align-items: center;
+}
+
+.team-owner
+.meta >
+.name {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+  text-transform: none;
+}
+
+.team-owner
+.meta >
+.description {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 3px;
+  margin-bottom: 1px;
+}
+
+.roster-score-and-projection {
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roster-score-and-projection
+.projections {
+  font-size: 11px;
+  font-weight: normal;
+  color: #888;
+}
+
+
+.win-chance-bar
+.left {
+  font-size: 8px;
+  line-height: 11px;
+  text-align: center;
+  color: #fff;
+  background: #00c853;
+  display: inline-block;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  overflow: hidden;
+  height: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-chance-bar
+.right {
+  font-size: 8px;
+  line-height: 11px;
+  text-align: center;
+  color: #fff;
+  background: #2196f3;
+  display: inline-block;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  overflow: hidden;
+  height: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-chance-bar
+.percentage-wrap
+.percentage-middle {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.win-chance-bar
+.percentage-wrap {
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: -3 px;
+}
+
+.team-owner-matchup-roster {
+  display: flex;
+  align-items: center;
+}
+
+.team-owner-matchup-row 
+.user.reverse {
+  flex-direction: row-reverse;
+}
+
+.team-owner-matchup-row 
+.user.reverse 
+.team-owner-matchup-roster
+.team-owner
+.meta {
+  margin-left: 0px;
+  margin-right: 10px;;
+  text-align: right;
+}
+
+.team-owner-matchup-row 
+.user
+.team-owner-matchup-roster
+.team-owner
+.meta {
+  margin-left: 10px;
+  margin-right: 0px;
+}
+
+.league-matchup-row-item 
+.position-label {
+  width: 14px;
+}
+
+.avatar-container
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+
+}

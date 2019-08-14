@@ -21,7 +21,7 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => {
     ) : (
       <Redirect to={{pathname: "/signup", nextPath: intd_loc}} />
       )
-  )} />
+    )} />
   )
 };
 
