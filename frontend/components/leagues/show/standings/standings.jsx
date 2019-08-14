@@ -10,10 +10,10 @@ class Standings extends React.Component {
 
   render() {
     let teamItems = [];
+    let users_team;
+    let last_team;
     if (this.props.teams[0]) {
-      let users_team;
       const teams = this.props.teams;
-      let last_team;
 
       for (let i = 0; i < teams.length; i++) {
         if(parseInt(teams[i].user_id) === this.props.currentUser.id){
@@ -47,11 +47,12 @@ class Standings extends React.Component {
              />
           );
         };
+
+        teams.push(users_team[0]);
+        teams.push(last_team[0]);
     } else {
       teamMatchUps = <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     };
-
-    debugger;
 
     return (
       <div>
