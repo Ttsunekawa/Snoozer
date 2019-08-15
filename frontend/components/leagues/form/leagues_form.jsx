@@ -13,7 +13,8 @@ class LeaguesForm extends React.Component {
       image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d",
       user_id: this.props.user_id,
       scoringType: this.props.scoringType,
-      leagueType: this.props.leagueType
+      leagueType: this.props.leagueType,
+      submitted: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,8 +47,7 @@ class LeaguesForm extends React.Component {
     e.preventDefault();
     const league = Object.assign({}, this.state);
     this.props.submitAction(league);
-    this.props.history.push('/leagues')
-  
+    this.props.history.push('/leagues');
   };
 
   renderErrors() {
@@ -86,7 +86,7 @@ class LeaguesForm extends React.Component {
     return (
       <div className="create-league-main-container">
         <div className="create-league-panel">
-          {/* header goes here */} {header}
+          {header}
           {this.renderErrors()}
           <div className="double-column">
             <form className="left-column-form">

@@ -67,8 +67,8 @@ class Leagues extends React.Component {
             <div className="right-panel">
               {/* Github/linkedin and stuff */}
               <div className="social-medias">
-                <div className="git">git</div>
-                <div className="linkedin">in</div>
+                <a href="https://github.com/Ttsunekawa" target="_blank" className="git">git</a>
+                <a href="https://www.linkedin.com/in/tyler-tsunekawa-8539a618b/" target="_blank" className="linkedin">in</a>
               </div>
             </div>
           </div>

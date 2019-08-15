@@ -9,6 +9,12 @@
   margin-top: 30px;
 }
 
+.league-matchup-row-item {
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef;
+}
+
 .user {
     flex-grow: 1;
     flex-basis: 0;
@@ -28,6 +34,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   align-content: space-around;
+  margin-top: 10px;
 }
 
 .team-owner {

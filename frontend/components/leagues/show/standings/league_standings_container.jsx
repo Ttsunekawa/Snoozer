@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import LeagueStandings from './standings';
+import LeagueStandings from './league_standings';
 
 const mapStateToProps = (state, ownProps) => {
   let league = state.entities.leagues[ownProps.match.params.leagueId]
@@ -8,7 +8,6 @@ const mapStateToProps = (state, ownProps) => {
     league: league,
     leagueName: league.name,
     image_url: league.image_url,
-    invite: league.invite_link.url,
     leagueType: league.leagueType,
     scoringType: league.scoringType,
     owners: league.owners,
@@ -19,4 +18,4 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
 });
 
-export default connect(mapStateToProps, null)(Standings);
+export default connect(mapStateToProps, null)(LeagueStandings);

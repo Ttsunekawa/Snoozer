@@ -47,10 +47,10 @@ class Predraft extends React.Component {
           }
 
         const teams = this.props.teams;
-        debugger
         teamItems = teams.map((team, i) => {
           return(
           <TeamItem
+            key={team.user_id}
             name={team.name}
             avatar={team.image_url}
             key={team.id}
@@ -81,7 +81,7 @@ class Predraft extends React.Component {
           </div>
         </div>
         <div className="teams-index-container">
-        {teamItems}
+         {teamItems}
         </div>
       </div>
     );

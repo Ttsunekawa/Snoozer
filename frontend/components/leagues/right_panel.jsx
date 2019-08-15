@@ -19,9 +19,8 @@ const RightPanel = (props) => {
       <div className="right-panel">
         {/* Github/linkedin and stuff */}
         <div className="social-medias">
-          <div className="git">git</div>
-          <div className="linkedin">in</div>
-        </div>
+          <a href="https://github.com/Ttsunekawa" className="git">git</a>
+          <a href="https://www.linkedin.com/in/tyler-tsunekawa-8539a618b/" target="_blank" className="linkedin">in</a>
       </div>
     </div>
   )
