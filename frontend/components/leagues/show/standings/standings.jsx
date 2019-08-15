@@ -68,7 +68,7 @@ class Standings extends React.Component {
             </div>
           </div>
           <div className="section">
-            <LeagueStandings />
+            {/* <LeagueStandings /> */}
           </div>
         </div>
       </div>
