@@ -79,4 +79,215 @@ ActiveRecord::Base.transaction do
     # end
   end
 
+  player1 = Player.create({
+    first_name: "Matt",
+    last_name: "Ryan",
+    team: "ATL",
+    position: "QB",
+  })
+
+  player2 = Player.create({
+    first_name: "Saquon",
+    last_name: "Barkley",
+    team: "NYG",
+    position: "RB",
+  })
+
+  player3 = Player.create({
+    first_name: "Tevin",
+    last_name: "Coleman",
+    team: "SF",
+    position: "RB",
+  })
+
+  player4 = Player.create({
+    first_name: "Rashaad",
+    last_name: "Penny",
+    team: "SEA",
+    position: "RB",
+  })
+
+  player5 = Player.create({
+    first_name: "Mike",
+    last_name: "Evans",
+    team: "TB",
+    position: "WR",
+  })
+
+  player6 = Player.create({
+    first_name: "Curtis",
+    last_name: "Samuel",
+    team: "CAR",
+    position: "WR",
+  })
+
+  player7 = Player.create({
+    first_name: "Todd",
+    last_name: "Gurley",
+    team: "LAR",
+    position: "RB",
+  })
+
+  player8 = Player.create({
+    first_name: "LeVeon",
+    last_name: "Bell",
+    team: "NYJ",
+    position: "RB",
+  })
+
+  player9 = Player.create({
+    first_name: "Brandin",
+    last_name: "Cooks",
+    team: "LAR",
+    position: "WR",
+  })
+
+  player10 = Player.create({
+    first_name: "Christian",
+    last_name: "McCaffrey",
+    team: "CAR",
+    position: "RB",
+  })
+
+  player11 = Player.create({
+    first_name: "Carson",
+    last_name: "Wentz",
+    team: "PHI",
+    position: "QB",
+  })
+
+  player12 = Player.create({
+    first_name: "Mark",
+    last_name: "Ingram",
+    team: "BAL",
+    position: "RB",
+  })
+
+  player13 = Player.create({
+    first_name: "Josh",
+    last_name: "Jacobs",
+    team: "OAK",
+    position: "RB",
+  })
+
+  player14 = Player.create({
+    first_name: "Jameis",
+    last_name: "Winston",
+    team: "TB",
+    position: "QB",
+  })
+
+  player15 = Player.create({
+    first_name: "Corey",
+    last_name: "Davis",
+    team: "TEN",
+    position: "WR",
+  })
+
+  player16 = Player.create({
+    first_name: "Keenan",
+    last_name: "Allen",
+    team: "LAC",
+    position: "WR",
+  })
+
+  player17 = Player.create({
+    first_name: "Cooper",
+    last_name: "Kupp",
+    team: "LAR",
+    position: "WR",
+  })
+
+  player18 = Player.create({
+    first_name: "George",
+    last_name: "Kittle",
+    team: "SF",
+    position: "TE",
+  })
+
+  player19 = Player.create({
+    first_name: "Kerryon",
+    last_name: "Johnson",
+    team: "DET",
+    position: "RB",
+  })
+
+  player20 = Player.create({
+    first_name: "DJ",
+    last_name: "Moore",
+    team: "CAR",
+    position: "WR",
+  })
+
+  player21 = Player.create({
+    first_name: "Tyreek",
+    last_name: "Hill",
+    team: "KC",
+    position: "WR",
+  })
+
+  player22 = Player.create({
+    first_name: "Matthew",
+    last_name: "Stafford",
+    team: "DET",
+    position: "QB",
+  })
+
+  player23 = Player.create({
+    first_name: "Evan",
+    last_name: "Engram",
+    team: "NYG",
+    position: "TE",
+  })
+
+  player24 = Player.create({
+    first_name: "Cam",
+    last_name: "Newton",
+    team: "CAR",
+    position: "QB",
+  })
+
+  player25 = Player.create({
+    first_name: "Kirk",
+    last_name: "Cousins",
+    team: "MIN",
+    position: "QB",
+  })
+
+  player26 = Player.create({
+    first_name: "Leonard",
+    last_name: "Fournette",
+    team: "JAC",
+    position: "RB",
+  })
+
+  player27 = Player.create({
+    first_name: "David",
+    last_name: "Johnson",
+    team: "ARI",
+    position: "RB",
+  })
+
+  player28 = Player.create({
+    first_name: "Jared",
+    last_name: "Goff",
+    team: "LAR",
+    position: "QB",
+  })
+
+  player29 = Player.create({
+    first_name: "Zach",
+    last_name: "Ertz",
+    team: "PHI",
+    position: "TE",
+  })
+
+  player30 = Player.create({
+    first_name: "Alvin",
+    last_name: "Kamara",
+    team: "NO",
+    position: "RB",
+  })
+
+  
 end

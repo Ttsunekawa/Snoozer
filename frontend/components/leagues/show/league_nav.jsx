@@ -19,11 +19,11 @@ class LeagueNav extends React.Component {
     let LeagueNav;
     const league = this.props.league;
     let headers = ["Matchup", "My Team", "League", "Settings"];
-    let description = ["Live Scoring", "Edit Roster", "Standings", "For League"];
+    let description = ["Live Scoring", "Edit Roster", "Matchups", "For League"];
     let url = [
       `/leagues/${league.id}/match`,
       `/leagues/${league.id}/team`,
-      `/leagues/${league.id}/standings`,
+      `/leagues/${league.id}/matchups`,
       `/leagues/${league.id}/settings`];
 
     LeagueNav = headers.map((header, i) => (

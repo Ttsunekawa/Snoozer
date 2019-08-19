@@ -9,12 +9,13 @@ const mapStateToProps = (state, ownProps) => {
   let nextPath;
   let link;
 
-  if(state.invite !== undefined){
-    nextPath = state.invite
-    link = <Link className="right-header-action" to={nextPath}>Don't have an account? Sign Up</Link>
-  } else {
+
+  if(Object.keys(state.invite).length === 0){
     nextPath = null
     link =  <Link className="right-header-action" to="/signup">Don't have an account? Sign Up</Link> 
+  } else {
+    nextPath = state.invite
+    link = <Link className="right-header-action" to={nextPath}>Don't have an account? Sign Up</Link>
   };
 
   return ({

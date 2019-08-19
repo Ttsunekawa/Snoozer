@@ -46,8 +46,9 @@ class LeaguesForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const league = Object.assign({}, this.state);
-    this.props.submitAction(league);
-    this.props.history.push('/leagues');
+    this.props.submitAction(league).then(res => {
+      this.props.history.push('/leagues')
+    });
   };
 
   renderErrors() {

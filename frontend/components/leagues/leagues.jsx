@@ -6,6 +6,7 @@ import PredraftContainer from './predraft/predraft_container';
 import StandingsContainer from './show/standings/standings_container';
 import LeagueNavContainer from './show/league_nav_container';
 import { ProtectedRoute } from '../../util/route_util'
+import TeamsContainer from './show/team/teams_container';
 
 class Leagues extends React.Component {
   constructor(props) {
@@ -44,7 +45,8 @@ class Leagues extends React.Component {
               {nav}
             <Switch>
               <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
-              <Route path="/leagues/:leagueId/standings" component={StandingsContainer} />
+              <Route path="/leagues/:leagueId/matchups" component={StandingsContainer} />
+              <Route path="/leagues/:leagueId/team" component={TeamsContainer} />
               <Route exact path="/leagues/:leagueId/predraft" component={PredraftContainer} />
               {/* <Route exact path="/leagues/:leagueId/" component={StandingsContainer} /> */}
               <Route exact path="/leagues/:leagueId" component={PredraftContainer} />
