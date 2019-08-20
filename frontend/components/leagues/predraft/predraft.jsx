@@ -47,16 +47,18 @@ class Predraft extends React.Component {
           }
 
         const teams = this.props.teams;
+        console.log(this.props.owners)
         teamItems = teams.map((team, i) => {
+          // console.log(this.props.owners[team.user_id])
+          let owner = typeof this.props.owners[team.user_id] === 'object' ? this.props.owners[team.user_id].username : this.props.owners[team.user_id]
           return(
           <TeamItem
-            key={team.user_id}
             name={team.name}
             avatar={team.image_url}
             key={team.id}
             index={i+1}
             id={team.id}
-            owner={this.props.owners[team.user_id]}
+              owner={owner}
           />
           )
         });

@@ -7,6 +7,7 @@ class TeamItem extends React.Component {
 
 
   render() {
+    console.log(this.props.owner)
     return (
       <div className="team-container">
         <div className="roster-list-num">{this.props.index}.</div>
