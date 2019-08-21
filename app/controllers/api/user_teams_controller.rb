@@ -2,7 +2,7 @@ class Api::UserTeamsController < ApplicationController
 
   def update
     @league = current_user.leagues.find(params[:league_id])
-    user_team = UserTeam.find_by(player_id: params[:player][:id], league_id: @league.id)
+    user_team = UserTeam.find_by(player_id: params[:playerId], league_id: @league.id)
     @user = current_user
     team = Team.find_by(user_id: @user.id)
     

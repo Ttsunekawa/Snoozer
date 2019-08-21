@@ -8,7 +8,7 @@ const configureStore = (preloadedState = {}) => (
   createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk),
+    applyMiddleware(logger, thunk),
   ));
 
 export default configureStore;
