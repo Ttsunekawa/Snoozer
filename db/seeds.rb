@@ -7,11 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 ActiveRecord::Base.transaction do
 
-  User.delete_all
-  Team.delete_all
-  League.delete_all
-  Invite.delete_all
-  UserTeam.delete_all
+  User.destroy_all
+  Team.destroy_all
+  League.destroy_all
+  Invite.destroy_all
+  UserTeam.destroy_all
+  Player.destroy_all
 
   player1 = Player.create({first_name: "Matt", last_name: "Ryan", team: "ATL",position: "QB"})
   player2 = Player.create({first_name: "Saquon", last_name: "Barkley", team: "NYG",position: "RB"})
