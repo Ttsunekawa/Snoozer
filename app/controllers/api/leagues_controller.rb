@@ -9,10 +9,18 @@ class Api::LeaguesController < ApplicationController
     @league = League.new(league_params)
     @user = current_user
     @league.user_id = params[:league][:user_id]
+    @players = Player.all
     if @league.save
 
       invite_link = SecureRandom.urlsafe_base64
       Invite.create({url: invite_link, league_id: @league.id })
+
+      @players.each do |player|
+        UserTeam.create(
+          player_id: player.id,
+          league_id: @league.id
+        )
+      end
 
         commish_team = Team.new(
           name: "Team 1",
@@ -26,7 +34,7 @@ class Api::LeaguesController < ApplicationController
       i = 2
 
       x.times do 
-        Team.create(
+        team = Team.create(
           name: "Team #{i}",
           league_id: @league.id
           )
@@ -43,6 +51,7 @@ class Api::LeaguesController < ApplicationController
   def show
     @league = current_user.leagues.find(params[:id])
     @user = current_user
+    @free_agents = UserTeam.where(team_id: nil)
     render "/api/leagues/show"
   end
 
