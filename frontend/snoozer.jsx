@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import { createLeague, deleteLeague, fetchLeagues } from './actions/league_actions';
-import { addPlayer, deletePlayer, fetchPlayers } from './util/player_api_util';
+import { addPlayer, deletePlayer, fetchPlayers } from './actions/player_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 

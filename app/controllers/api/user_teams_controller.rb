@@ -28,7 +28,7 @@ class Api::UserTeamsController < ApplicationController
 
     if user_team.save
       debugger
-      userteams = UserTeam.where(team_id: nil, league_id: @league.id)
+      userteams = UserTeam.where(league_id: @league.id)
       @free_agents = []
       ids = []
 
@@ -38,7 +38,7 @@ class Api::UserTeamsController < ApplicationController
         @free_agents << player
       end
 
-      render '/api/leagues/show'
+      render '/api/user_teams/update'
     end
 
   end
