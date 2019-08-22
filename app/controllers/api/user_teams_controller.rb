@@ -1,5 +1,21 @@
 class Api::UserTeamsController < ApplicationController
 
+  def index
+    @league = current_user.leagues.find(params[:league_id])
+    userteams = UserTeam.where(team_id: nil, league_id: @league.id)
+    @free_agents = []
+    ids = []
+    debugger
+
+    userteams.each { |user_team| ids << user_team.player_id }
+    ids.each do |id|
+      player = Player.find(id)
+      @free_agents << player
+    end
+
+    render '/api/user_teams/index'
+  end
+
   def update
     @league = current_user.leagues.find(params[:league_id])
     user_team = UserTeam.find_by(player_id: params[:playerId], league_id: @league.id)
@@ -12,20 +28,42 @@ class Api::UserTeamsController < ApplicationController
 
     if user_team.save
       debugger
-      @free_agents = UserTeam.where(team_id: nil)
+      userteams = UserTeam.where(team_id: nil, league_id: @league.id)
+      @free_agents = []
+      ids = []
+
+      userteams.each { |user_team| ids << user_team.player_id}
+      ids.each do |id|
+        player = Player.find(id)
+        @free_agents << player
+      end
+
       render '/api/leagues/show'
     end
 
   end
 
   def destroy
-    @league = current_user.leagues.find(params[:id])
-    user_team = UserTeam.find_by(player_id: params[:player][:id], league_id: @league.id)
+    debugger
+    @league = current_user.leagues.find(params[:league_id])
+    user_team = UserTeam.find_by(player_id: params[:playerId], league_id: @league.id)
+    userteams = UserTeam.where(team_id: nil, league_id: @league.id)
     user = current_user
     user_team.team_id = nil
-    @players = Player.find_by(league_id: @league.id, team_id: nil)
-    user_team.save
-    render '/api/leagues/show'
+    @free_agents = []
+    ids = []
+
+      userteams.each { |user_team| ids << user_team.player_id}
+      ids.each do |id|
+        player = Player.find(id)
+        @free_agents << player
+      end
+
+    if user_team.save
+      render '/api/leagues/show'
+    else
+      render json: ["Access Denied"], status: 401
+    end
   end
 
 

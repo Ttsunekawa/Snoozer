@@ -18,7 +18,7 @@ const leaguesReducer = (state = _nullLeague, action) => {
     case RECEIVE_LEAGUES:
       return action.leagues;
     case DELETE_LEAGUE:
-      delete newState[action.leagueId] 
+      delete newState[action.leagueId.id] 
       return newState
     default:
       return state;

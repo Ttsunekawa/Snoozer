@@ -9,13 +9,13 @@ class Api::LeaguesController < ApplicationController
     @league = League.new(league_params)
     @user = current_user
     @league.user_id = params[:league][:user_id]
-    @players = Player.all
+    @free_agents = Player.all
     if @league.save
 
       invite_link = SecureRandom.urlsafe_base64
       Invite.create({url: invite_link, league_id: @league.id })
 
-      @players.each do |player|
+      @free_agents.each do |player|
         UserTeam.create(
           player_id: player.id,
           league_id: @league.id
@@ -39,7 +39,8 @@ class Api::LeaguesController < ApplicationController
           league_id: @league.id
           )
         i += 1
-        end
+      end
+
 
       render "/api/leagues/show"
     else

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :teams, only: [:update, :show]
       patch '/user_teams/add', to: 'user_teams#update'
       delete '/user_teams/remove', to: 'user_teams#destroy'
+      get '/user_teams/', to: 'user_teams#index'
     end
   end
   root to: "static_pages#root"
