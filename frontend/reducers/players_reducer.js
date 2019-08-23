@@ -2,9 +2,9 @@ import { RECEIVE_PLAYERS, RECEIVE_PLAYER, REMOVE_PLAYER } from '../actions/playe
 
 const playersReducer = (state = {}, action => {
   let nextState = Object.assign({}, state);
-  debugger
   switch (action.type) {
     case RECEIVE_PLAYERS:
+        debugger
       
     case RECEIVE_PLAYER:
 
