@@ -5,7 +5,6 @@ class Api::UserTeamsController < ApplicationController
     userteams = UserTeam.where(team_id: nil, league_id: @league.id)
     @free_agents = []
     ids = []
-    debugger
 
     userteams.each { |user_team| ids << user_team.player_id }
     ids.each do |id|
@@ -22,12 +21,10 @@ class Api::UserTeamsController < ApplicationController
     @user = current_user
     team = Team.find_by(user_id: @user.id)
     
-    debugger  
     user_team.team_id = team.id
   
 
     if user_team.save
-      debugger
       userteams = UserTeam.where(league_id: @league.id)
       @free_agents = []
       ids = []
@@ -44,7 +41,6 @@ class Api::UserTeamsController < ApplicationController
   end
 
   def destroy
-    debugger
     @league = current_user.leagues.find(params[:league_id])
     user_team = UserTeam.find_by(player_id: params[:playerId], league_id: @league.id)
     userteams = UserTeam.where(team_id: nil, league_id: @league.id)

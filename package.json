@@ -2,11 +2,8 @@
   "name": "Snoozer",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
-    "babel-loader": "^8.0.6",
     "react": "^16.9.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.9.0",
@@ -45,7 +42,10 @@
   },
   "homepage": "https://github.com/Ttsunekawa/Snoozer#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
     "webpack-cli": "^3.3.6"
   }
 }
