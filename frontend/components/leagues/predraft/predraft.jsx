@@ -64,15 +64,24 @@ class Predraft extends React.Component {
       } else {
         teamItems = <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       }
+
+      let header;
+
+      if (this.props.location.pathname.includes("predraft") === true) {
+        header = 
+          <div className="predraft-panel-header">
+            <div className="name-container">
+              <div className="name">{this.props.name}</div>
+              <div className="description">{this.props.teams.length}-Team {this.props.scoringType}</div>
+            </div>
+            <div className="league-avatar"><img src={this.props.image_url} /></div>
+          </div>
+      } else {
+        header = null;
+      }
     return (
       <div className="predraft-panel">
-        <div className="predraft-panel-header">
-          <div className="name-container">
-            <div className="name">{this.props.name}</div>
-            <div className="description">{this.props.teams.length}-Team {this.props.scoringType}</div>
-          </div>
-          <div className="league-avatar"><img src={this.props.image_url}/></div>
-        </div>
+        {header}
           {invite}
         <div className="teams-label">
           <div>

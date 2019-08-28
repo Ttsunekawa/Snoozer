@@ -40,9 +40,18 @@ class LeagueNav extends React.Component {
     );
 
     return (
-      <div className="panel-tabs" >
-        <div className="tabs-container">
-          {LeagueNav}
+      <div className="predraft-panel-container">
+        <div className="predraft-panel-header">
+          <div className="name-container">
+            <div className="name">{this.props.leagueName}</div>
+            <div className="description">{this.props.teams.length}-Team {this.props.scoringType}</div>
+          </div>
+          <div className="league-avatar"><img src={this.props.image_url} /></div>
+        </div>
+        <div className="panel-tabs" >
+          <div className="tabs-container">
+            {LeagueNav}
+          </div>
         </div>
       </div>
     )
