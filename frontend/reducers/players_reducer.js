@@ -8,7 +8,7 @@ const playersReducer = (state = {}, action) => {
       debugger
       return action.players
     case RECEIVE_PLAYER:
-      nextState[action.player] = 
+      
     case REMOVE_PLAYER:
 
     default:
