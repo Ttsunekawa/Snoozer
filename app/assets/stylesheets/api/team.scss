@@ -16,4 +16,14 @@
   color: #7888a4;
   cursor: pointer;
   font-family: 'Muli';
+  height: 55px;
+
+  img {
+    // width: 100%;
+    height: 100%;
+  }
+}
+
+.actions .btn:hover {
+  color: blue;
 }
