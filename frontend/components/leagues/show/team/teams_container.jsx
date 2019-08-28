@@ -1,25 +1,29 @@
 import { connect } from 'react-redux';
 import Team from './team';
+import { fetchPlayers } from '../../../../actions/player_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let league = state.entities.leagues[ownProps.match.params.leagueId]
   let currentUser = state.entities.users[state.session.id]
   let team;
+  let players = Object.values(state.players)
 
   for (let i = 0; i < league.teams.length; i++) {
     if (parseInt(league.teams[i].user_id) === currentUser.id) {
       team = league.teams[i]
     }
   }
-  debugger
   
   return ({
+    league: league,
     currentUser: currentUser,
     team: team,
+    players: players
   })
 };
 
 const mapDispatchToProps = dispatch => ({
+  fetchPlayers: leagueId => dispatch(fetchPlayers(leagueId))
 });
 
-export default connect(mapStateToProps, null)(Team);
+export default connect(mapStateToProps, mapDispatchToProps)(Team);
