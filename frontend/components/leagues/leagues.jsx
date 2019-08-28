@@ -47,6 +47,7 @@ class Leagues extends React.Component {
               <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
               <Route path="/leagues/:leagueId/matchups" component={StandingsContainer} />
               <Route path="/leagues/:leagueId/team" component={TeamsContainer} />
+              <Route path="/leagues/:leagueId/roster" component={TeamsContainer} />
               <Route exact path="/leagues/:leagueId/predraft" component={PredraftContainer} />
               {/* <Route exact path="/leagues/:leagueId/" component={StandingsContainer} /> */}
               <Route exact path="/leagues/:leagueId" component={PredraftContainer} />

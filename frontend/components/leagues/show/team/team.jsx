@@ -8,6 +8,14 @@ class Team extends React.Component {
     this.state = { selectedIndex: null }
   }
 
+  render() {
+    return(
+      <div>
+        
+      </div>
+    )
+  }
+
 
 
 }
