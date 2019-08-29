@@ -23,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchPlayers: leagueId => dispatch(fetchPlayers(leagueId))
+  fetchPlayers: leagueId => dispatch(fetchPlayers(leagueId)),
+  // fetchOwnPlayers: 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Team);

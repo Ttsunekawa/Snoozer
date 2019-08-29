@@ -20,3 +20,11 @@ export const fetchPlayers = (leagueId) => (
     url: `api/leagues/${leagueId}/user_teams/`
   })
 )
+
+export const fetchOwnPlayers = (leagueId) => (
+  $.ajax ({
+    method: "get",
+    data: { teamId },    
+    url: `api/leagues/${leagueId}/own_team`
+  })
+)

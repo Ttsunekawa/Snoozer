@@ -1,5 +1,25 @@
-@free_agents.each do |fa| 
-  json.set! fa.id do
-    json.extract! fa, :first_name, :last_name, :position, :team
+
+
+json.free_agents do
+    @free_agents.each do |player| 
+    json.set! player.id do
+      json.extract! player, :id, :first_name, :last_name, :position, :team
+    end
+  end
+end
+
+json.teams_players do
+  @user_teams.each do |user_team|
+    if user_team.team_id
+      json.set! user_team.team_id do
+        user_teams = UserTeam.where(team_id: user_team.team_id)
+        user_teams.each do |user_team|
+          player = Player.find(user_team.player_id)
+          json.set! player.id do
+            json.extract! player, :id, :first_name, :last_name, :position, :team
+          end
+        end
+      end
+    end
   end
 end

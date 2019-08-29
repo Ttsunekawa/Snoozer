@@ -2,12 +2,22 @@ class Api::UserTeamsController < ApplicationController
 
   def index
     @league = current_user.leagues.find(params[:league_id])
-    userteams = UserTeam.where(team_id: nil, league_id: @league.id)
+    @user_teams = UserTeam.where(league_id: @league.id)
+    @all_players = UserTeam.where(team_id: nil, league_id: @league.id)
+    @players = {}
     @free_agents = []
-    ids = []
+    player_ids = []
+    free_agent_ids = []
 
-    userteams.each { |user_team| ids << user_team.player_id }
-    ids.each do |id|
+    @user_teams.each { |user_team| player_ids << user_team.player_id }
+    @all_players.each { |free_agent| free_agent_ids << free_agent.player_id }
+
+    player_ids.each do |id|
+      player = Player.find(id)
+      @players[id] = player
+    end
+
+    free_agent_ids.each do |id|
       player = Player.find(id)
       @free_agents << player
     end
@@ -38,6 +48,15 @@ class Api::UserTeamsController < ApplicationController
       render '/api/user_teams/update'
     end
 
+  end
+
+  def teams_players
+    @league = current_user.leagues.find(params[:league_id])
+    @user = current_user
+    team = Team.find_by(user_id: @user.id)
+    @players = team.players
+
+    render 'api/user_teams/own_players'
   end
 
   def destroy

@@ -170,7 +170,7 @@ div {
   padding: 90px 115px 115px 45px;
   flex-grow: 1;
   margin: auto;
-  width: 500px; 
+  min-width: 500px; 
 }
 
 .title-container {
@@ -277,7 +277,7 @@ div {
 
 .app-button-gradient {
   // border: 1px;
-  width: 110px;
+  min-width: 110px;
   margin-top: 40px;
   margin-left: 10px;
   text-transform: uppercase;

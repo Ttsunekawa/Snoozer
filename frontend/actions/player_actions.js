@@ -18,6 +18,14 @@ export const removePlayer = player => ({
   player
 })
 
+export const fetchOwnPlayers = (teamId, leagueId) => dispatch => (
+  playerAPIUtil.fetchOwnPlayers(teamId, leagueId).then(players => (
+    dispatch(receiveOwnPlayers(players))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
 export const addPlayer = (leagueId, playerId) => dispatch => (
   playerAPIUtil.addPlayer(leagueId, playerId).then(player => (
     dispatch(receivePlayer(player))
