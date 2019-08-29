@@ -13,8 +13,8 @@ json.teams_players do
     if user_team.team_id
       json.set! user_team.team_id do
         user_teams = UserTeam.where(team_id: user_team.team_id)
-        user_teams.each do |user_team|
-          player = Player.find(user_team.player_id)
+        team = Team.find(user_team.team_id)
+        team.players.each do |player|
           json.set! player.id do
             json.extract! player, :id, :first_name, :last_name, :position, :team
           end
