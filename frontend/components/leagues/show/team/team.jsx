@@ -16,14 +16,13 @@ class Team extends React.Component {
   }
 
 
+
+
   render() {
+
     return(
       <div>
         <div className="team-main-container">
-          <div className="actions">
-            <AddPlayerModal />
-            <RemovePlayerModal />
-          </div>
           <div className="team-header">
             <div className="team-owner">
               <div className="avatar-container">
@@ -34,7 +33,12 @@ class Team extends React.Component {
               </div>
             </div>
           </div>
-          <TeamRoster roster={this.props.roster} />
+          <TeamRoster 
+            addPlayer={this.props.addPlayer} 
+            removePlayer={this.props.removePlayer}
+            players={this.props.own_players} 
+            free_agents={this.props.free_agents} 
+          />
         </div>
       </div>
     )

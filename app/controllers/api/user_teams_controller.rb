@@ -45,7 +45,7 @@ class Api::UserTeamsController < ApplicationController
         @free_agents << player
       end
 
-      render '/api/user_teams/update'
+      render '/api/user_teams/index'
     end
 
   end
@@ -75,7 +75,7 @@ class Api::UserTeamsController < ApplicationController
       end
 
     if user_team.save
-      render '/api/leagues/show'
+      render '/api/user_teams/index'
     else
       render json: ["Access Denied"], status: 401
     end

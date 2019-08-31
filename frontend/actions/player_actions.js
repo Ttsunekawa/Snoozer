@@ -28,15 +28,15 @@ export const fetchOwnPlayers = (teamId, leagueId) => dispatch => (
 
 export const addPlayer = (leagueId, playerId) => dispatch => (
   playerAPIUtil.addPlayer(leagueId, playerId).then(player => (
-    dispatch(receivePlayer(player))
+    dispatch(receivePlayers(players))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
 
 export const deletePlayer = (leagueId, playerId) => dispatch => (
-  playerAPIUtil.deletePlayer(leagueId, playerId).then(player => (
-    dispatch(removePlayer(player))
+  playerAPIUtil.deletePlayer(leagueId, playerId).then(players => (
+    dispatch(receivePlayers(players))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
