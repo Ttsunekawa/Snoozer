@@ -20,6 +20,20 @@ class Team extends React.Component {
       <div>
         <div className="team-main-container">
           <div className="actions">
+            <AddPlayerModal />
+            <RemovePlayerModal />
+          </div>
+          <div className="team-header">
+            <div className="team-owner">
+              <div className="avatar-container">
+                <img src={this.props.team.image_url} alt=""/>
+              </div>
+              <div className="meta">
+                <div className="name">{this.props.currentUser.username}</div>
+              </div>
+            </div>
+          </div>
+          <div>
             
           </div>
         </div>

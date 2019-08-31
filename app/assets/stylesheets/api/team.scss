@@ -20,10 +20,32 @@
 
   img {
     // width: 100%;
-    height: 100%;
+    height: 75%;
   }
 }
 
 .actions .btn:hover {
   color: blue;
+}
+
+.team-main-container .team-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  cursor: pointer;
+  padding-left: 10px;
+  }
+
+.team-header
+.team-owner 
+.meta 
+.name {
+  margin-left: 5px;
+}
+
+.team-main-container {
+  height: 100vh;
+  padding: 15px;
 }
