@@ -18,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
     league: league,
     currentUser: currentUser,
     team: team,
-    players: players
+    players: players,
+    roster: ["QB","RB","RB","WR","WR","TE","FLEX"]
   })
 };
 

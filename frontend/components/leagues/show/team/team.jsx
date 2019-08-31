@@ -1,6 +1,7 @@
 import React from 'react';
 import AddPlayerModal from './add_player_modal';
 import RemovePlayerModal from './remove_player_modal';
+import TeamRoster from './team_roster';
 
 
 class Team extends React.Component {
@@ -33,9 +34,7 @@ class Team extends React.Component {
               </div>
             </div>
           </div>
-          <div>
-            
-          </div>
+          <TeamRoster roster={this.props.roster} />
         </div>
       </div>
     )
