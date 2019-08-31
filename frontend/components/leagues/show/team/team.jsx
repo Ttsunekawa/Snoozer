@@ -20,8 +20,7 @@ class Team extends React.Component {
       <div>
         <div className="team-main-container">
           <div className="actions">
-            <AddPlayerModal />
-            <RemovePlayerModal />
+            
           </div>
         </div>
       </div>
