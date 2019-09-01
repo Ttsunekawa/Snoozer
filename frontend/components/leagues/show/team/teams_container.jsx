@@ -16,8 +16,12 @@ const mapStateToProps = (state, ownProps) => {
   }
   
   if(Object.keys(state.players).length !== 0) {
-    own_players = Object.values(state.players.teams_players[team.id])
-    free_agents = Object.values(state.players.free_agents)
+    if (state.players.teams_players[team.id] !== undefined){
+      own_players = Object.values(state.players.teams_players[team.id])
+    }
+    if (Object.keys(state.players.free_agents).length !== 0) {
+      free_agents = Object.values(state.players.free_agents)
+    }
   }
   
   return ({

@@ -37,7 +37,8 @@ class Team extends React.Component {
             addPlayer={this.props.addPlayer} 
             removePlayer={this.props.removePlayer}
             players={this.props.own_players} 
-            free_agents={this.props.free_agents} 
+            free_agents={this.props.free_agents}
+            league={this.props.league}
           />
         </div>
       </div>

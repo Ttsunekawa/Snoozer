@@ -15,7 +15,7 @@ export default class PlayerItem extends Component {
 
   handleClick(e) {
     e.preventDefault();
-
+    this.props.action(this.props.league.id, this.props.id);
   }
 
   render() {
@@ -39,10 +39,10 @@ export default class PlayerItem extends Component {
           <div className="player-pos">{this.props.position} - {this.props.team}</div>
         </div>  
         <div className="player-projection">
-          <div>Projection</div>
+          <div>Projected</div>
           {this.randomIntFromInterval(1.0,23.0)}
         </div>
-        <div onClick={() => this.handleClick} className="player-action">
+        <div onClick={this.handleClick} className="player-action">
           <img className="player-action-picture" src={actionPic}></img>
         </div>
       </div>

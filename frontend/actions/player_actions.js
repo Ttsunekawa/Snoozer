@@ -27,7 +27,7 @@ export const fetchOwnPlayers = (teamId, leagueId) => dispatch => (
 );
 
 export const addPlayer = (leagueId, playerId) => dispatch => (
-  playerAPIUtil.addPlayer(leagueId, playerId).then(player => (
+  playerAPIUtil.addPlayer(leagueId, playerId).then(players => (
     dispatch(receivePlayers(players))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))

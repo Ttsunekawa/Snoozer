@@ -107,7 +107,7 @@
 }
 
 .player-projection {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: normal;
   display:flex;
   flex-direction: column;
@@ -122,4 +122,8 @@
 .player-action-picture {
   height: 30px;
   padding-bottom: 5px;
+}
+
+.players-team-header {
+  size: 19px;
 }
