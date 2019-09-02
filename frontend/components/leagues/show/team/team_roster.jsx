@@ -46,7 +46,7 @@ export default class TeamRoster extends Component {
     return (
       <div className="team-roster">
         <div className="players-team-header">Your Team</div>
-        <div className="team-roster-helper">Click on the  button to remove a player from your team!</div>
+        <div className="team-roster-helper">Click on the - button to remove a player from your team!</div>
         <div className="players-team">
           {ownTeamItems}
         </div>
