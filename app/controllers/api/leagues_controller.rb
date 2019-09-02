@@ -36,7 +36,8 @@ class Api::LeaguesController < ApplicationController
       x.times do 
         team = Team.create(
           name: "Team #{i}",
-          league_id: @league.id
+          league_id: @league.id,
+          image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
           )
         i += 1
       end
