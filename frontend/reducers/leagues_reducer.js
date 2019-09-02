@@ -7,7 +7,6 @@ const _nullLeague = Object.freeze({
 
 const leaguesReducer = (state = _nullLeague, action) => {
   Object.freeze(state);
-
   let newState = Object.assign({}, state)
   switch (action.type) {
     case LOGOUT_CURRENT_USER:
@@ -18,7 +17,7 @@ const leaguesReducer = (state = _nullLeague, action) => {
     case RECEIVE_LEAGUES:
       return action.leagues;
     case DELETE_LEAGUE:
-      delete newState[action.leagueId.id] 
+      delete newState[action.leagueId.id];
       return newState
     default:
       return state;

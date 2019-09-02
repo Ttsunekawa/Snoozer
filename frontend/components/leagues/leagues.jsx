@@ -4,6 +4,7 @@ import LeftPanelContainer from './left_panel_container';
 import LeaguesLoginContainer from './form/leagues_login_container';
 import PredraftContainer from './predraft/predraft_container';
 import StandingsContainer from './show/standings/standings_container';
+import LeagueSettingsContainer from './show/settings/settings_container';
 import LeagueNavContainer from './show/league_nav_container';
 import { ProtectedRoute } from '../../util/route_util'
 import TeamsContainer from './show/team/teams_container';
@@ -47,6 +48,7 @@ class Leagues extends React.Component {
               <Route exact path="/leagues/create" component={LeaguesLoginContainer} />
               <Route path="/leagues/:leagueId/matchups" component={StandingsContainer} />
               <Route path="/leagues/:leagueId/team" component={TeamsContainer} />
+              <Route path="/leagues/:leagueId/settings" component={LeagueSettingsContainer} />
               {/* <Route path="/leagues/:leagueId/roster" component={TeamsContainer} /> */}
               <Route exact path="/leagues/:leagueId/predraft" component={PredraftContainer} />
               {/* <Route exact path="/leagues/:leagueId/" component={StandingsContainer} /> */}

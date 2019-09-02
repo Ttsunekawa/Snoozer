@@ -25,7 +25,8 @@ class Api::LeaguesController < ApplicationController
         commish_team = Team.new(
           name: "Team 1",
           league_id: @league.id,
-          user_id: @league.user_id
+          user_id: @league.user_id,
+          image_url: "https://sleepercdn.com/images/logos/og_logo-0fd5b06cb8b04f3eb1997ccc3f7f5201.png?vsn=d"
           )
         commish_team.save
 
